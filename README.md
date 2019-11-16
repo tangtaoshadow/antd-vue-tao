@@ -4,7 +4,7 @@
 
 **Repository：** [Author: GitHub](https://github.com/tangtaoshadow/ant-design-tao)  [Propro:Gitee](https://gitee.com/ProproStudio/Propro-Server-Front) [Gitee](https://gitee.com/tangtao2099/ant-design-tao)
 
-**Introduction：** 集成当前流行框架，实现前后端分离，强调用户体验的一个国际化的蛋白质组学分析平台。
+**Introduction：** 集成当前流行框架，实现前后端分离，强调用户体验，
 
 **Author：**[杭州电子科技大学](http://www.hdu.edu.cn/)  2016级管理学院 工商管理 唐涛 [16011324@hdu.edu.cn](mailto:16011324@hdu.edu.cn)
 
@@ -59,6 +59,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## `Ant Design Vue`
 
+#### **statement**：
+
+采用了大量 `ant-design-vue` 组件，提升了开发速度和用户体验。
+
+
+
 
 
 <p align="center">
@@ -70,12 +76,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 <div align="center">
+
 An enterprise-class UI components based on Ant Design and Vue.
+    
 [![Travis branch](https://travis-ci.org/vueComponent/ant-design-vue.svg?branch=master)](https://travis-ci.org/vueComponent/ant-design-vue) [![codecov](https://img.shields.io/codecov/c/github/vueComponent/ant-design-vue/master.svg?style=flat-square)](https://codecov.io/gh/vueComponent/ant-design-vue) [![npm package](https://img.shields.io/npm/v/ant-design-vue.svg?style=flat-square)](https://www.npmjs.org/package/ant-design-vue) [![NPM downloads](http://img.shields.io/npm/dm/ant-design-vue.svg?style=flat-square)](http://www.npmtrends.com/ant-design-vue) [![Join the chat at https://gitter.im/vueComponent/ant-design-english](https://badges.gitter.im/vueComponent/ant-design-english.svg?style=flat-square)](https://gitter.im/vueComponent/ant-design-english?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) (English) [![Join the chat at https://gitter.im/vueComponent/ant-design-vue](https://img.shields.io/gitter/room/vueComponent/ant-design-vue.svg?style=flat-square)](https://gitter.im/vueComponent/ant-design-vue?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)（中文） [![backers](https://opencollective.com/ant-design-vue/backers/badge.svg)](#backers) [![sponsors](https://opencollective.com/ant-design-vue/sponsors/badge.svg)](#sponsors) [![extension-for-VSCode](https://img.shields.io/badge/extension%20for-VSCode-blue.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=ant-design-vue.vscode-ant-design-vue-helper)
+
 </div>
 
-
-[![](https://cdn-images-1.medium.com/max/2000/1*NIlj0-TdLMbo_hzSBP8tmg.png)](https://vue.ant.design/)
+[![]( http://cdn.promiselee.cn/share_static/files/ant-design/ant-design-vue-1.png )](https://vue.ant.design/)
 
 English  | [官网国内镜像](http://ant-design-vue.gitee.io/docs/vue/introduce-cn/)
 
