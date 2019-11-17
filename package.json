@@ -3,7 +3,7 @@
     "version": "1.2.0",
     "private": true,
     "create_time": "2019-11-16 03:33:56",
-    "update_time": "2019-11-17 02:01:37",
+    "update_time": "2019-11-17 17:49:39",
     "tangtao": "tangtao tangtao2099@outlook.com https://www.promiselee.cn/tao",
     "description": "基于ant-design-vue开发",
     "GitHub[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
@@ -69,6 +69,6 @@
     "updateTao": [
         "1.0.0 初始化项目 at 2019-11-16 11:22:58",
         "1.1.0 添加必备组件 antd babel less at 2019-11-17 01:59:18",
-        "1.1.0 添加组件 i18n at 2019-11-17 17:48:30"
+        "1.2.0 添加组件 i18n at 2019-11-17 17:48:30"
     ]
 }
