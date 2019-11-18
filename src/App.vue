@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="tao">
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <div>
@@ -14,6 +14,12 @@
 </template>
 
 <script>
+/*
+ * @Author: TangTao https://www.promiselee.cn/tao
+ * @Date: 2019-11-17 18:19:25
+ * @Last Modified by: TangTao tangtao2099@outlook.com
+ * @Last Modified time: 2019-11-18 18:37:46
+ */
 import HelloWorld from "./components/HelloWorld.vue";
 
 export default {

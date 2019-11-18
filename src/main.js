@@ -13,8 +13,8 @@ import i18n from "./utils/locale";
 Vue.config.productionTip = false;
 Vue.component(Button.name, Button);
 
-new Vue({
+window.tao=new Vue({
     // 导入国际化
     i18n,
     render: h => h(App)
-}).$mount("#app");
+}).$mount("#tao");
