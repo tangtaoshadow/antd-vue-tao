@@ -3,7 +3,7 @@
     "version": "1.2.0",
     "private": true,
     "create_time": "2019-11-16 03:33:56",
-    "update_time": "2019-11-17 17:49:39",
+    "update_time": "2019-11-18 23:35:39",
     "tangtao": "tangtao tangtao2099@outlook.com https://www.promiselee.cn/tao",
     "description": "基于ant-design-vue开发",
     "GitHub[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
@@ -53,7 +53,9 @@
             "plugin:vue/essential",
             "eslint:recommended"
         ],
-        "rules": {},
+        "rules": {
+            "no-console": "off"
+        },
         "parserOptions": {
             "parser": "babel-eslint"
         }
@@ -72,6 +74,6 @@
         "1.1.0 添加必备组件 antd babel less at 2019-11-17 01:59:18",
         "1.2.0 添加组件 i18n at 2019-11-17 17:48:30",
         "1.3.0 添加组件 vuex at 2019-11-18 19:54:12",
-        "update time at 2019-11-18 19:54:04"
+        "update time at 2019-11-18 23:59:55"
     ]
 }

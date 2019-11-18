@@ -1,10 +1,13 @@
-/*
+/***文档注释***
  * @Author: TangTao https://www.promiselee.cn/tao
- * @Date: 2019-11-17 17:45:03
- * @Last Modified by:   TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-17 17:45:03
+ * @Date: 2019-11-18 23:59:24
+ * @Email: tangtao2099@outlook.com
+ * @LastModifiedBy: TangTao tangtao2099@outlook.com
+ * @LastModifiedTime: 2019-11-18 23:59:24
  * @Archive: 英文国际化
- */
+ * @Statement:
+ ***/
+
 export default {
     global: {
         username: "User Name",
