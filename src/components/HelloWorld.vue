@@ -1,6 +1,8 @@
 <template>
     <div class="hello">
         <h1>{{ msg }}</h1>
+        <h1>HelloWorld 11111111111111111</h1>
+
         <p>
             For a guide and recipes on how to configure / customize this
             project,
@@ -9,6 +11,9 @@
                 >vue-cli documentation</a
             >.
         </p>
+        <router-link :to="{ name: 'HelloWorld3' }" tag="a"
+            >HelloWorld3</router-link
+        >
         <h3>Installed CLI Plugins</h3>
         <ul>
             <li>

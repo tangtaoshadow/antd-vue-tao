@@ -1,6 +1,8 @@
 <template>
     <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png" />
+        <router-view></router-view>
+
+        <!-- <img alt="Vue logo" src="./assets/logo.png" />
         <HelloWorld msg="Welcome to Your Vue.js App" />
         <div>
             <a-button type="primary">Primary</a-button>
@@ -9,7 +11,7 @@
             <a-button type="danger">Danger</a-button>
             <a-button type="primary">按钮</a-button>
             <a-button type="link">Link</a-button>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -18,15 +20,15 @@
  * @Author: TangTao https://www.promiselee.cn/tao
  * @Date: 2019-11-17 18:19:25
  * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-18 19:59:30
+ * @Last Modified time: 2019-11-20 09:56:20
  */
-import HelloWorld from "./components/HelloWorld.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
     name: "app",
-    components: {
-        HelloWorld
-    },
+    // components: {
+    //     HelloWorld
+    // },
     data() {
         return {};
     }

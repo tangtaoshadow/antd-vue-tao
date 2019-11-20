@@ -4,8 +4,8 @@
  * @Email: tangtao2099@outlook.com
  * @LastModifiedBy: TangTao tangtao2099@outlook.com
  * @LastModifiedTime: 2019-11-19 00:01:28
- * @Archive: 触发器 修改 state
- * @Statement:
+ * @Archive:  触发器 修改 state
+ * @Statement: 同步事件处理
  ***/
 
 export default {

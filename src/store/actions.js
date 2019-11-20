@@ -1,3 +1,13 @@
+/***文档注释***
+ * @Author: TangTao https://www.promiselee.cn/tao
+ * @Date: 2019-11-19 21:43:15
+ * @Email: tangtao2099@outlook.com
+ * @LastModifiedBy: TangTao tangtao2099@outlook.com
+ * @LastModifiedTime: 2019-11-19 21:43:15
+ * @Archive:
+ * @Statement: 异步事件处理
+ ***/
+
 import i18n from "@/utils/locale";
 
 export default {
