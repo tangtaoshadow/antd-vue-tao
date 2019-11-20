@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <router-view></router-view>
-
         <!-- <img alt="Vue logo" src="./assets/logo.png" />
         <HelloWorld msg="Welcome to Your Vue.js App" />
         <div>
@@ -20,7 +19,7 @@
  * @Author: TangTao https://www.promiselee.cn/tao
  * @Date: 2019-11-17 18:19:25
  * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-20 09:56:20
+ * @Last Modified time: 2019-11-20 17:42:26
  */
 // import HelloWorld from "./components/HelloWorld.vue";
 
