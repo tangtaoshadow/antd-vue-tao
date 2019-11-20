@@ -2,7 +2,7 @@
  * @Author: TangTao https://www.promiselee.cn/tao
  * @Date: 2019-11-20 17:00:12
  * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-20 17:37:46
+ * @Last Modified time: 2019-11-20 18:06:45
  */
 /***文档注释***
  * @Author: TangTao https://www.promiselee.cn/tao
@@ -14,27 +14,27 @@
  * @Statement:
  ***/
 
-import Layout from "../components/layout";
+// import Layout from "../components/layout";
 import HelloWorld from "../components/HelloWorld";
 import HelloWorld2 from "../components/HelloWorld2";
 import HelloWorld3 from "../components/HelloWorld3";
-// import { BasicLayout } from "../layouts";
+import { BasicLayout } from "../layouts";
 
 const routes = [
     {
         // 根路径
-        path: "/a",
+        path: "/",
         // 加载组件
-        component: Layout,
-        // component: BasicLayout,
-        redirect: "/a/3",
+        // component: Layout,
+        component: BasicLayout,
+        // redirect: "/",
         // 子路由配置
         children: [
             {
-                path: "2",
+                // 首页
+                path: "",
                 name: "HelloWorld2",
                 component: HelloWorld2
-
                 // 错误用法 ： 这样路由不会匹配
                 // component: () => {
                 //     console.log("222222222");
