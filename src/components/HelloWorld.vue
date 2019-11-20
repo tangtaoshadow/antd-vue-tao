@@ -1,158 +1,134 @@
-<template>
-    <div class="hello">
-        <h1>{{ msg }}</h1>
-        <h1>HelloWorld 11111111111111111</h1>
-
-        <p>
-            For a guide and recipes on how to configure / customize this
-            project,
-            <br />check out the
-            <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-                >vue-cli documentation</a
-            >.
-        </p>
-        <router-link :to="{ name: 'HelloWorld3' }" tag="a"
-            >HelloWorld3</router-link
-        >
-        <h3>Installed CLI Plugins</h3>
-        <ul>
-            <li>
-                <a
-                    href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-                    target="_blank"
-                    rel="noopener"
-                    >babel</a
-                >
-            </li>
-            <li>
-                <a
-                    href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-                    target="_blank"
-                    rel="noopener"
-                    >eslint</a
-                >
-            </li>
-        </ul>
-        <h3>Essential Links</h3>
-        <ul>
-            <li>
-                <a href="https://vuejs.org" target="_blank" rel="noopener"
-                    >Core Docs</a
-                >
-            </li>
-            <li>
-                <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-                    >Forum</a
-                >
-            </li>
-            <li>
-                <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-                    >Community Chat</a
-                >
-            </li>
-            <li>
-                <a
-                    href="https://twitter.com/vuejs"
-                    target="_blank"
-                    rel="noopener"
-                    >Twitter</a
-                >
-            </li>
-            <li>
-                <a href="https://news.vuejs.org" target="_blank" rel="noopener"
-                    >News</a
-                >
-            </li>
-        </ul>
-        <h3>Ecosystem</h3>
-        <ul>
-            <li>
-                <a
-                    href="https://router.vuejs.org"
-                    target="_blank"
-                    rel="noopener"
-                    >vue-router</a
-                >
-            </li>
-            <li>
-                <a href="https://vuex.vuejs.org" target="_blank" rel="noopener"
-                    >vuex</a
-                >
-            </li>
-            <li>
-                <a
-                    href="https://github.com/vuejs/vue-devtools#vue-devtools"
-                    target="_blank"
-                    rel="noopener"
-                    >vue-devtools</a
-                >
-            </li>
-            <li>
-                <a
-                    href="https://vue-loader.vuejs.org"
-                    target="_blank"
-                    rel="noopener"
-                    >vue-loader</a
-                >
-            </li>
-            <li>
-                <a
-                    href="https://github.com/vuejs/awesome-vue"
-                    target="_blank"
-                    rel="noopener"
-                    >awesome-vue</a
-                >
-            </li>
-        </ul>
-        <p>{{ label }}</p>
-        <button @click="switchLang">切换</button>
-    </div>
-</template>
-
 <script>
+/*
+ * @Author: TangTao https://www.promiselee.cn/tao
+ * @Date: 2019-11-20 13:17:43
+ * @Last Modified by: TangTao tangtao2099@outlook.com
+ * @Last Modified time: 2019-11-20 13:18:07
+ */
 import { mapState } from "vuex";
 
 export default {
-    name: "HelloWorld",
-    props: {
-        msg: String
-    },
-    computed: {
-        ...mapState(["lang"]),
-        label() {
-            return this.$t("global.username");
-        }
-    },
-    methods: {
-        switchLang() {
-            // console.log(mapState(["lang"]));
-            let lang = "";
-            if (this.lang === "zhCN") {
-                lang = "en";
-            } else {
-                lang = "zhCN";
-            }
-            console.log("switchLang");
-            this.$store.commit("switchLang", lang);
-        }
+  name: "HelloWorld",
+  props: {
+    msg: String
+  },
+  computed: {
+    ...mapState(["lang"]),
+
+    label() {
+      return this.$t("global.username");
     }
+  },
+  methods: {
+    switchLang() {
+      // console.log(mapState(["lang"]));
+      let lang = "";
+      if (this.lang === "zhCN") {
+        lang = "en";
+      } else {
+        lang = "zhCN";
+      }
+      console.log("switchLang");
+      this.$store.commit("switchLang", lang);
+    }
+  }
 };
 </script>
+
+<template>
+  <div class="hello">
+    <h1>{{ msg }}</h1>
+    <h1>HelloWorld 11111111111111111</h1>
+    <h1>HelloWorld 11111111111111111</h1>
+    <h1>HelloWorld 11111111111111111</h1>
+
+    <p>
+      For a guide and recipes on how to configure / customize this
+      project,
+      <br />check out the
+      <a
+        href="https://cli.vuejs.org"
+        target="_blank"
+        rel="noopener"
+      >vue-cli documentation</a>.
+    </p>
+    <router-link :to="{ name: 'HelloWorld3' }" tag="a">HelloWorld3</router-link>
+    <h3>Installed CLI Plugins</h3>
+    <ul>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
+          target="_blank"
+          rel="noopener"
+        >babel</a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
+          target="_blank"
+          rel="noopener"
+        >eslint</a>
+      </li>
+    </ul>
+    <h3>Essential Links</h3>
+    <ul>
+      <li>
+        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
+      </li>
+      <li>
+        <a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a>
+      </li>
+      <li>
+        <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a>
+      </li>
+      <li>
+        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
+      </li>
+    </ul>
+    <h3>Ecosystem</h3>
+    <ul>
+      <li>
+        <a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a>
+      </li>
+      <li>
+        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-devtools#vue-devtools"
+          target="_blank"
+          rel="noopener"
+        >vue-devtools</a>
+      </li>
+      <li>
+        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a>
+      </li>
+      <li>
+        <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a>
+      </li>
+    </ul>
+    <p>{{ label }}</p>
+    <button @click="switchLang">切换</button>
+  </div>
+</template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-    margin: 40px 0 0;
+  margin: 40px 0 0;
 }
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 li {
-    display: inline-block;
-    margin: 0 10px;
+  display: inline-block;
+  margin: 0 10px;
 }
 a {
-    color: #42b983;
+  color: #42b983;
 }
 </style>
