@@ -62,17 +62,17 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```json
 {
     "name": "antd-vue-tao",
-    "version": "1.2.0",
+    "version": "1.5.0",
     "private": true,
     "create_time": "2019-11-16 03:33:56",
-    "update_time": "2019-11-17 17:49:39",
+    "update_time": "2019-11-22 13:45:50",
     "tangtao": "tangtao tangtao2099@outlook.com https://www.promiselee.cn/tao",
     "description": "基于ant-design-vue开发",
     "GitHub[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
     "Repository[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
     "scripts": {
-        "tao": "vue-cli-service serve",
-        "build": "vue-cli-service build",
+        "tao": "echo antd-vue-tao && vue-cli-service serve",
+        "build": "echo antd-vue-tao && vue-cli-service build",
         "lint": "vue-cli-service lint"
     },
     "keywords": [
@@ -89,10 +89,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     "Gitee[Propro]": "https://gitee.com/ProproStudio/Propro-Server-Front",
     "license": "TangTao",
     "dependencies": {
-        "ant-design-vue": "^1.4.4",
+        "ant-design-vue": "1.4.6",
         "core-js": "^3.4.1",
+        "less-loader": "^5.0.0",
         "vue": "^2.6.10",
         "vue-i18n": "^8.15.0",
+        "vue-router": "3.1.3",
         "vuex": "3.1.2"
     },
     "devDependencies": {
@@ -115,7 +117,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
             "plugin:vue/essential",
             "eslint:recommended"
         ],
-        "rules": {},
+        "rules": {
+            "no-console": "off"
+        },
         "parserOptions": {
             "parser": "babel-eslint"
         }
@@ -134,7 +138,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
         "1.1.0 添加必备组件 antd babel less at 2019-11-17 01:59:18",
         "1.2.0 添加组件 i18n at 2019-11-17 17:48:30",
         "1.3.0 添加组件 vuex at 2019-11-18 19:54:12",
-        "update time at 2019-11-18 19:54:04"
+        "1.4.0 添加组件 vue-router 3.1.3 at 2019-11-20 09:37:10",
+        "1.5.0 升级组件 ant-design-vue 1.4.6 at 2019-11-22 15:15:01",
+        "1.5.1 实现底部样式  at 2019-11-22 17:46:32",
+        "update time at 2019-11-22 15:15:11"
     ]
 }
 
