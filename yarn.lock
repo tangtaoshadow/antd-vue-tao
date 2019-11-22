@@ -1349,10 +1349,10 @@ ansi-styles@^4.1.0:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
-ant-design-vue@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/ant-design-vue/-/ant-design-vue-1.4.4.tgz#e3950489324a870273928ed22f5dabf6284424a7"
-  integrity sha512-ASRR/rn+ONAeNWd96MzCpReZa4177fdwEBHpgPc/L0Bj/1EakJNN54JacKVXCXxnJt0VI2UXByfgUibpnOQwRQ==
+ant-design-vue@1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/ant-design-vue/-/ant-design-vue-1.4.6.tgz#9f01171332710d006d5dd5ca3b79b48e3eaa3331"
+  integrity sha512-01bgC8PM9zh4O5Xf6EHtrk6k3Erup+foVn56tRskQPBf634NhqKxvpKvjQqxeXQNhkCxFYJBO6eWT7gZeHSgUw==
   dependencies:
     "@ant-design/icons" "^2.1.1"
     "@ant-design/icons-vue" "^2.0.0"
@@ -2179,7 +2179,7 @@ clone@^1.0.2:
   resolved "https://registry.npm.taobao.org/clone/download/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
 
-clone@^2.1.2:
+clone@^2.1.1, clone@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
@@ -4865,6 +4865,15 @@ lcid@^2.0.0:
   integrity sha1-bvXS32DlL4LrIopMNz6NHzlyU88=
   dependencies:
     invert-kv "^2.0.0"
+
+less-loader@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-5.0.0.tgz#498dde3a6c6c4f887458ee9ed3f086a12ad1b466"
+  integrity sha512-bquCU89mO/yWLaUq0Clk7qCsKhsF/TZpJUzETRvJa9KSVEL9SO3ovCvdEHISBhrC81OwC8QSVX7E0bzElZj9cg==
+  dependencies:
+    clone "^2.1.1"
+    loader-utils "^1.1.0"
+    pify "^4.0.1"
 
 less@^3.10.3:
   version "3.10.3"

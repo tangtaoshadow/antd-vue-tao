@@ -2,13 +2,15 @@
  * @Author: TangTao https://www.promiselee.cn/tao
  * @Date: 2019-11-22 13:28:41
  * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-22 13:40:38
+ * @Last Modified time: 2019-11-22 15:09:14
  * @Archive: ant-design 配置文件
  * @Statement: 这里启用了按需加载的机制 把需要配置的antd组件加载进入
  */
 
 import Vue from "vue";
+
 import { Button, Icon, Layout, Menu } from "ant-design-vue";
+// import "./antd.less";
 
 // 按钮配置
 Vue.component(Button.name, Button);
