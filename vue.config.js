@@ -8,24 +8,49 @@
  * @Archive:
  * @Statement:
  * @Date: 2019-11-22 19:37:45
- * @Last Modified by:   TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-22 19:37:45
+ * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
+ * @Last Modified time: 2019-11-23 00:17:34
  */
 
 // import "./src/layouts/Common.less";
+// const path = require("path");
+// const htmlWebpackPlugin = require("html-webpack-plugin");
+// // import HtmlWebpackPlugin from "HtmlWebpackPlugin";
+// let obj_htmlwebpackplugin = new htmlWebpackPlugin({
+//     minify: {
+//         // removeAttributeQuotes: false // 移除属性的引号
+//     }
+// });
 // vue.config.js
+
 const vueConfig = {
     configureWebpack: {
         // webpack plugins
         plugins: [
             // Ignore all locale files of moment.js
+            // obj_htmlwebpackplugin
             //   new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
         ]
         // if prod is on, add externals
         // externals: isProd() ? prodExternals : {}
     },
-
+    // chainWebpack: config => {
+    //     config.resolve.alias
+    //         .set("@", resolve("src"))
+    //         .set("assets", resolve("src/assets"))
+    //         .set("components", resolve("src/components"))
+    //         .set("router", resolve("src/router"));
+    // },
+    chainWebpack: config => {
+        config.plugin("html").tap(args => {
+            args[0].minify = false;
+            return args;
+        });
+    },
+    // 开启hash
+    filenameHashing: true,
     css: {
+        // sourceMap: false,
         loaderOptions: {
             less: {
                 modifyVars: {
@@ -56,11 +81,10 @@ const vueConfig = {
         //     changeOrigin: true
         //   }
         // }
-    }
-
+    },
     // disable source map in production
-    //   productionSourceMap: false,
-    //   lintOnSave: undefined,
+    productionSourceMap: false,
+    lintOnSave: undefined
     // babel-loader no-ignore node_modules/*
     //   transpileDependencies: []
 };

@@ -2,7 +2,7 @@
  * @Author: TangTao https://www.promiselee.cn/tao
  * @Date: 2019-11-20 17:00:12
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-22 21:06:26
+ * @Last Modified time: 2019-11-23 00:10:07
  */
 /***文档注释***
  * @Author: TangTao https://www.promiselee.cn/tao
@@ -30,18 +30,26 @@ const routes = [
         // component: Layout,
         component: BasicLayout,
         // redirect: "/",
+        meta: {
+            title: "首页",
+            content: "tangtao"
+        },
         // 子路由配置
         children: [
             {
                 // 首页
                 path: "",
-                name: "HelloWorld2",
-                component: Home
+                name: "Home1",
+                component: Home,
                 // 错误用法 ： 这样路由不会匹配
                 // component: () => {
                 //     console.log("222222222");
                 //     return HelloWorld2;
                 // }
+                meta: {
+                    title: "首页",
+                    content: "tangtao1"
+                }
             },
             {
                 path: "/a/1",

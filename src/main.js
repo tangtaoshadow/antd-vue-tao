@@ -9,7 +9,7 @@
  * @Statement:
  * @Date: 2019-11-22 19:36:02
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-22 20:11:04
+ * @Last Modified time: 2019-11-23 00:16:50
  */
 
 /*****************************************************/
@@ -44,6 +44,26 @@ Vue.config.productionTip = false;
 antd;
 
 /******************  完成 Vue 配置 success   ************************/
+
+/*****************************************************/
+/******************  完成 meta 配置   ************************/
+/******************  完成 meta 配置   ************************/
+router.beforeEach((to, from, next) => {
+    /* 路由发生变化修改页面meta */
+    if (to.meta.content) {
+        let head = document.getElementsByTagName("head");
+        let meta = document.createElement("meta");
+        meta.content = to.meta.content;
+        head[0].appendChild(meta);
+    }
+    /* 路由发生变化修改页面title */
+    if (to.meta.title) {
+        document.title = to.meta.title;
+    }
+    next();
+});
+
+/******************  完成 meta 配置 success   ************************/
 
 /*****************************************************/
 /******************  挂载组件  ************************/
