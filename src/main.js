@@ -9,7 +9,7 @@
  * @Statement:
  * @Date: 2019-11-22 19:36:02
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-22 19:37:15
+ * @Last Modified time: 2019-11-22 20:11:04
  */
 
 /*****************************************************/
@@ -30,6 +30,9 @@ Vue.use(less);
 
 // 导入 antd 实现的配置
 import { antd } from "./config/antd";
+
+// 导入 全局 directive
+import "./config/vue_directives";
 
 /******************  导入依赖配置   success  ************************/
 

@@ -10,13 +10,17 @@
 
 **CreateTime：**`2019-11-17 01:34:41`
 
-**UpdateTime：**`2019-11-17 03:05:13`
+**UpdateTime：**`2019-11-22 21:11:35`
 
 **Copyright:**  唐涛 [HOME | 首页](https://www.promiselee.cn/tao) 2019 ©  
 
 **Email：**[tangtao2099@outlook.com](mailto:propro@westlake.edu.cn)
 
 **Link：**  [知乎](https://www.zhihu.com/people/tang-tao-24-36/activities)   [GitHub](https://github.com/tangtaoshadow)
+
+
+
+# [访问网页](https://www.promiselee.cn/tao/antd-vue)
 
 
 
@@ -135,6 +139,30 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 }
 
 ```
+
+
+
+
+
+---
+
+# 首页
+
+**作者：**[唐涛](https://www.promiselee.cn/tao)
+
+**创建**：`2019-11-22 20:27:17`
+
+**修改**：`2019-11-22 20:29:52`
+
+## 导航、中间布局
+
+![tangtao](http://cdn.promiselee.cn/share_static/files/dian/antd-vue-tao/home1-2019-11-22-202422.png)
+
+## 底部布局
+
+![tangtao](http://cdn.promiselee.cn/share_static/files/dian/antd-vue-tao/home2-2019-11-22-202840.png)
+
+
 
 
 

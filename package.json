@@ -10,7 +10,7 @@
     "Repository[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
     "scripts": {
         "tao": "echo antd-vue-tao && vue-cli-service serve",
-        "build": "vue-cli-service build",
+        "build": "echo antd-vue-tao && vue-cli-service build",
         "lint": "vue-cli-service lint"
     },
     "keywords": [
