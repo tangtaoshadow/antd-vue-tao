@@ -3,7 +3,7 @@
  * @Author: TangTao https://www.promiselee.cn/tao
  * @Date: 2019-11-20 20:16:37
  * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-22 17:44:18
+ * @Last Modified time: 2019-11-22 18:30:52
  */
 export default {
   name: "BasicLayout",
@@ -14,10 +14,20 @@ export default {
       img_logo1: require("../assets/static/public/5dba549ae4b0c5553747ebc6.png"),
       img_dian: require("../assets/static/public/5dba8d2de4b0ece759450b77.png"),
       img_2: require("../assets/static/public/5dba8d94e4b0335f1e47fa0a.png"),
+      img_3: require("../assets/static/public/20191122182019.png"),
+      img_4: require("../assets/static/public/5dba605be4b0ece75944abaa.png"),
       footer_col_style: {
         paddingTop: "15px"
       }
     };
+  },
+  directives: {
+    pointer: {
+      // 指令的定义
+      bind: function(el) {
+        el.style.cursor = "pointer";
+      }
+    }
   }
 };
 </script>
@@ -53,7 +63,62 @@ export default {
     <a-layout-content :style="{ padding: '0 0px', margin: '0px', minHeight: '700px' }">
       <router-view />
     </a-layout-content>
-    <a-layout-footer class="footer" :style="{ textAlign: 'center',padding:'20px 30px' }">
+    <a-row type="flex" justify="space-around" style="padding:20px 50px 40px;">
+      <img :src="img_3" style="max-width:900px;" />
+
+      <a-col :md="24" :style="footer_col_style">
+        <div
+          style="font-size:22px;font-weight:700;padding-bottom:20px;"
+          v-pointer
+        >———— COMMUNITY SUPPORT ————</div>
+      </a-col>
+      <a-col :md="7" :lg="6" :style="footer_col_style">
+        <div style="font-size:16px;font-weight:700;text-align:left;" v-pointer>
+          &nbsp;Official Documents
+          <div style="height:10px;width:30px;"></div>
+          <span style="font-size:14px;font-weight:500;">
+            临床实验室按照ISO15189、CAP、CLSI-62A等国际临床质谱实验室质量体系标准建设，
+            可提供临床样本委托检测及方法开发服务。目前已自主研发实验室检测项目200余项
+          </span>
+          <div style="height:10px;width:30px;"></div>
+          <a-button type="default" style="height:40px;font-weight:600;">
+            VIEW ON YUQUE
+            <img :src="img_4" style="max-height:30px;" />
+          </a-button>
+        </div>
+      </a-col>
+      <a-col :md="7" :lg="6" :style="footer_col_style">
+        <div style="font-size:16px;font-weight:700;text-align:left;" v-pointer>
+          &nbsp;Official Documents
+          <div style="height:10px;width:30px;"></div>
+          <span style="font-size:14px;font-weight:500;">
+            临床实验室按照ISO15189、CAP、CLSI-62A等国际临床质谱实验室质量体系标准建设，
+            可提供临床样本委托检测及方法开发服务。目前已自主研发实验室检测项目200余项
+          </span>
+          <div style="height:10px;width:30px;"></div>
+          <a-button type="default" style="height:40px;font-weight:600;">
+            VIEW ON YUQUE
+            <img :src="img_4" style="max-height:30px;" />
+          </a-button>
+        </div>
+      </a-col>
+      <a-col :md="7" :lg="6" :style="footer_col_style">
+        <div style="font-size:16px;font-weight:700;text-align:left;" v-pointer>
+          &nbsp;Official Documents
+          <div style="height:10px;width:30px;"></div>
+          <span style="font-size:14px;font-weight:500;">
+            临床实验室按照ISO15189、CAP、CLSI-62A等国际临床质谱实验室质量体系标准建设，
+            可提供临床样本委托检测及方法开发服务。目前已自主研发实验室检测项目200余项
+          </span>
+          <div style="height:10px;width:30px;"></div>
+          <a-button type="default" style="height:40px;font-weight:600;">
+            VIEW ON YUQUE
+            <img :src="img_4" style="max-height:30px;" />
+          </a-button>
+        </div>
+      </a-col>
+    </a-row>
+    <a-layout-footer class="footer" :style="{ textAlign: 'center', padding: '20px 30px' }">
       <a-row type="flex" justify="center">
         <a-col :md="24" :lg="11" :xl="9" :style="footer_col_style">
           <img :src="img_logo1" style="max-height: 40px;cursor: pointer;" />
@@ -62,18 +127,20 @@ export default {
             公司目前已在杭州，上海，北京成立质谱中心实验室，可提供包括临床检测、
             代谢组学科研、应用开发、CRO、以及环境毒理等多种质谱检测技术服务，
             满足不同类型客户需求。同时，公司建有全球领先的代谢组学科研机构METABOLON中国唯一授权实验室，
-            独家为中国科研与医疗机构提供METABOLON Discovery HD4TM非靶向精准代谢组学科研服务。
+            独家为中国科研与医疗机构提供METABOLON Discovery
+            HD4TM非靶向精准代谢组学科研服务。
           </div>
         </a-col>
         <a-col :md="12" :lg="6" :xl="5" :style="footer_col_style">
           <div style="font-size:20px;font-weight:600;color:#FFFFFF;cursor: pointer;">QUICK LINK</div>
           <div style="padding:10px 5px;">
-            <img :src="img_dian" style="max-width:180px;cursor: pointer;" />
+            <img :src="img_dian" style="max-width:180px;cursor: pointer;background:#FFFFFF;" />
           </div>
           <div style="padding:10px 5px;">
-            <img :src="img_2" style="max-width:180px;cursor: pointer;" />
+            <img :src="img_2" style="max-width:180px;cursor: pointer;background:#FFFFFF;" />
           </div>
         </a-col>
+
         <a-col :md="12" :lg="6" :xl="5" :style="footer_col_style">
           <div style="font-size:20px;font-weight:600;color:#FFFFFF;cursor: pointer;">CONTACT US</div>
           <div style="padding:10px 5px;cursor: pointer;">
@@ -87,7 +154,7 @@ export default {
         <a-col :md="24" :style="footer_col_style">
           <div
             style="padding:10px 5px;cursor: pointer;text-align:center;"
-          >Terms / Privacy | Copyright . Licensed #*#*# blablabla</div>
+          >Terms / Privacy | Copyright . Licensed by propro</div>
         </a-col>
       </a-row>
     </a-layout-footer>

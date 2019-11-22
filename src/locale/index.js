@@ -1,10 +1,22 @@
-/***文档注释***
- * @Author: TangTao https://www.promiselee.cn/tao
- * @Date: 2019-11-20 13:22:59
- * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-20 13:24:12
+/*
+ * @Author: TangTao 杭州电子科技大学 管理学院(2016级) 工商管理
+ * @OfficialWebsite: https://www.promiselee.cn/tao
+ * @Filename:
+ * @Date: 2019-11-22 19:13:18
+ * @Last Modified by: TangTao
+ * @Email: tangtao2099@outlook.com
+ * @GitHub: https://github.com/tangtaoshadow
+ * @Gitee: https://gitee.com/tangtao_2099
+ * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
+ * @Archive:
+ * @Statement:
+ * @Email: tangtao2099@outlook.com
+ * @GitHub: https://github.com/tangtaoshadow
+ * @Gitee: https://gitee.com/tangtao_2099
+ * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive: 国际化配置
  * @Statement: 输出语言
+ * @Last Modified time: 2019-11-22 19:14:07
  */
 
 // 国际化设置
@@ -24,3 +36,18 @@ const i18n = new VueI18n({
 });
 
 export default i18n;
+
+/*
+ * @Author: TangTao 杭州电子科技大学 管理学院(2016级) 工商管理
+ * @OfficialWebsite: https://www.promiselee.cn/tao
+ * @Filename:
+ * @Date: 2019-11-22 19:13:18
+ * @Last Modified by:   TangTao
+ * @Email: tangtao2099@outlook.com
+ * @GitHub: https://github.com/tangtaoshadow
+ * @Gitee: https://gitee.com/tangtao_2099
+ * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
+ * @Archive: 国际化配置
+ * @Statement: 输出语言
+ * @Last Modified time: 2019-11-22 19:13:18
+ */

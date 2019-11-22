@@ -1,8 +1,15 @@
 /*
- * @Author: TangTao https://www.promiselee.cn/tao
- * @Date: 2019-11-22 14:54:45
- * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-22 16:10:25
+ * @Author: TangTao 杭州电子科技大学 管理学院(2016级) 工商管理
+ * @OfficialWebsite: https://www.promiselee.cn/tao
+ * @Email: tangtao2099@outlook.com
+ * @GitHub: https://github.com/tangtaoshadow
+ * @Gitee: https://gitee.com/tangtao_2099
+ * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
+ * @Archive:
+ * @Statement:
+ * @Date: 2019-11-22 19:37:45
+ * @Last Modified by:   TangTao © 2019 www.promiselee.cn/tao
+ * @Last Modified time: 2019-11-22 19:37:45
  */
 
 // import "./src/layouts/Common.less";

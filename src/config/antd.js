@@ -1,10 +1,15 @@
 /*
- * @Author: TangTao https://www.promiselee.cn/tao
- * @Date: 2019-11-22 13:28:41
- * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-22 16:43:36
+ * @Author: TangTao 杭州电子科技大学 管理学院(2016级) 工商管理
+ * @OfficialWebsite: https://www.promiselee.cn/tao
+ * @Date: 2019-11-22 19:09:07
+ * @Last Modified by:   TangTao
+ * @Email: tangtao2099@outlook.com
+ * @GitHub: https://github.com/tangtaoshadow
+ * @Gitee: https://gitee.com/tangtao_2099
+ * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive: ant-design 配置文件
  * @Statement: 这里启用了按需加载的机制 把需要配置的antd组件加载进入
+ * @Last Modified time: 2019-11-22 19:09:07
  */
 
 import Vue from "vue";
