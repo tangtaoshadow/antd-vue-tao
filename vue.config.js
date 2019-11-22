@@ -2,9 +2,10 @@
  * @Author: TangTao https://www.promiselee.cn/tao
  * @Date: 2019-11-22 14:54:45
  * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-22 15:18:43
+ * @Last Modified time: 2019-11-22 16:10:25
  */
 
+// import "./src/layouts/Common.less";
 // vue.config.js
 const vueConfig = {
     configureWebpack: {
@@ -23,8 +24,10 @@ const vueConfig = {
                 modifyVars: {
                     // 全局配置颜色修改
                     // less vars，customize ant design theme
-                    // "primary-color": "#FF0000",
-                    // "link-color": "#00ff00"
+                    // 使用了阿里云主题色
+                    "primary-color": "#FF6A00",
+                    "link-color": "#42B983"
+                    // "link-color": "#ff6a00"
                     // 'border-radius-base': '4px'
                 },
                 // do not remove this line
@@ -35,7 +38,9 @@ const vueConfig = {
 
     devServer: {
         // development server port 8000
+        // 配置部署端口
         port: 8008
+        // 代理转发配置
         // If you want to turn on the proxy, please remove the mockjs /src/main.jsL11
         // proxy: {
         //   '/api': {

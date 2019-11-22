@@ -2,7 +2,7 @@
  * @Author: TangTao https://www.promiselee.cn/tao
  * @Date: 2019-11-17 01:43:07
  * @Last Modified by: TangTao tangtao2099@outlook.com
- * @Last Modified time: 2019-11-22 14:49:23
+ * @Last Modified time: 2019-11-22 16:10:16
  */
 
 /*****************************************************/
@@ -16,6 +16,7 @@ import router from "./router";
 
 // 国际化配置
 import i18n from "../src/locale";
+
 // 加载less 配置
 import less from "less";
 Vue.use(less);
