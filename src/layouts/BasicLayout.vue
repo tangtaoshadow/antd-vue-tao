@@ -12,7 +12,6 @@ export default {
 
 <template>
     <div>
-        <router-view />
         <a-layout-header class="header">
             <div class="logo" />
             <a-menu
@@ -40,6 +39,8 @@ export default {
                 </a-sub-menu>
             </a-menu>
         </a-layout-header>
+        <router-view />
+
     </div>
 </template>
 
