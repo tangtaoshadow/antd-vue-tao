@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-24 00:13:10
+ * @Last Modified time: 2019-11-24 15:09:01
  */
 export default {
   name: "project",
@@ -19,47 +19,101 @@ export default {
       dataSource: [
         {
           key: "0",
-          name: "Edward King 0",
-          age: "32",
-          address: "London, Park Lane no. 0"
+          batchName: "batchName 1",
+          experiments: "32",
+          platform: "QXA01DN",
+          acquisitionMethod: "POSLAT",
+          uploadStatus: "100% (44/44)",
+          createDate: "2019-11-24 04:33:26",
+          description: "tangtao update at 2019-11-24 04:34:02"
         },
         {
           key: "1",
-          name: "Edward King 1",
-          age: "323",
-          address: "London, Park Lane no. 1"
+          batchName: "batchName 2",
+          experiments: "444",
+          platform: "GSGGSW2",
+          acquisitionMethod: "POSLAU",
+          uploadStatus: "90% (60/54)",
+          createDate: "2019-11-24 11:12:00",
+          description: "tangtao update at 2019-11-24 04:34:55"
         },
         {
           key: "2",
-          name: "柔柔弱弱 King 1",
-          age: "322",
-          address: "London, Park Lane no. 1"
+          batchName: "batchName 3",
+          experiments: "122",
+          platform: "DWHEDG33",
+          acquisitionMethod: "GTOSLAT",
+          uploadStatus: "44% (100/44)",
+          createDate: "2019-11-24 15:44:20",
+          description: "tangtao update at 2019-11-24 14:11:23"
         }
       ],
-      count: 2,
+      count: 4,
       columns: [
         {
-          title: "Batch Name",
-          dataIndex: "name",
-          width: "30%",
+          title: (
+            <span style="font-size:15px;font-weight:600;">Batch Name</span>
+          ),
+          dataIndex: "batchName",
+          // width: "30%",
           scopedSlots: { customRender: "name" }
         },
         {
-          title: "Experiments",
-          dataIndex: "age",
+          title: (
+            <span style="font-size:15px;font-weight:600;">Experiments</span>
+          ),
+          dataIndex: "experiments",
           // 自定义渲染 支持jsx 语法
-          customRender: (text, record, index) => {
-            console.log("111111", text, record, index);
-            return <h2> + 111 + text + </h2>;
+          // customRender: (text, record, index) => {
+          //   console.log(text, record, index);
+          //   return text;
+          // }
+          customRender: text => {
+            return <span class="font_green_color">{text}</span>;
           }
         },
         {
-          title: <h1>Platform</h1>,
-          dataIndex: "address",
-          scopedSlots: { customRender: "address" }
+          title: <span style="font-size:15px;font-weight:600;">Platform</span>,
+          dataIndex: "platform",
+          scopedSlots: { customRender: "platform" }
         },
         {
-          title: "Acquisition Method",
+          title: (
+            <span style="font-size:15px;font-weight:600;">
+              Acquisition Method
+            </span>
+          ),
+          dataIndex: "acquisitionMethod"
+        },
+        {
+          title: (
+            <span style="font-size:15px;font-weight:600;">Upload Status</span>
+          ),
+          dataIndex: "uploadStatus",
+          customRender: text => {
+            return <span class="font_green_color">{text}</span>;
+          }
+        },
+        {
+          title: (
+            <span style="font-size:15px;font-weight:600;">Create Date</span>
+          ),
+          dataIndex: "createDate",
+          customRender: text => {
+            return <span class="font_orange_color">{text}</span>;
+          }
+        },
+        {
+          title: (
+            <span style="font-size:15px;font-weight:600;">Description</span>
+          ),
+          dataIndex: "description",
+          customRender: text => {
+            return <span class="font_gray_color">{text}</span>;
+          }
+        },
+        {
+          title: <span style="font-size:15px;font-weight:600;">Operation</span>,
           dataIndex: "operation",
           scopedSlots: { customRender: "operation" }
         }
@@ -87,9 +141,9 @@ export default {
       const { count, dataSource } = this;
       const newData = {
         key: count,
-        name: `Edward King ${count}`,
-        age: 32,
-        address: `London, Park Lane no. ${count}`
+        batchName: `Edward King ${count}`,
+        experiments: 32,
+        platform: `London, Park Lane no. ${count}`
       };
       this.dataSource = [...dataSource, newData];
       this.count = count + 1;
@@ -107,31 +161,41 @@ export default {
       </a-col>
     </a-row>
     <a-button class="editable-add-btn" @click="handleAdd">Add</a-button>
-    <a-table
-      bordered
-      :size="'middle'"
-      :dataSource="dataSource"
-      :customHeaderRow="customHeaderRow"
-      :columns="columns"
-    >
-      <template slot="name" slot-scope="text, record">
-        <edit-table-cell :text="text" @change="onCellChange(record.key, 'name', $event)" />
-      </template>
 
-      <template slot="address" slot-scope="text">
-        <div v-html="text"></div>
-      </template>
+    <div style="max-width:1500px;margin:auto;">
+      <a-row type="flex" justify="center" style>
+        <a-col :sm="23" class="my-table" style="background:#FFF;padding:10px;">
+          <a-table
+            :bordered="false"
+            :size="'middle'"
+            :dataSource="dataSource"
+            :customHeaderRow="customHeaderRow"
+            :columns="columns"
+          >
+            <template slot="name" v-pointer slot-scope="text, record">
+              <edit-table-cell :text="text" @change="onCellChange(record.key, 'name', $event)" />
+            </template>
 
-      <template slot="operation" slot-scope="text, record">
-        <a-popconfirm
-          v-if="dataSource.length"
-          title="Sure to delete?"
-          @confirm="() => onDelete(record.key)"
-        >
-          <a href="javascript:;">Delete</a>
-        </a-popconfirm>
-      </template>
-    </a-table>
+            <template slot="platform" slot-scope="text">
+              <div v-html="text"></div>
+            </template>
+
+            <template slot="operation" slot-scope="text, record">
+              <a-popconfirm
+                v-if="dataSource.length"
+                title="Sure to delete?"
+                @confirm="() => onDelete(record.key)"
+              >
+                <a class="font_red_color" href="javascript:;">Delete</a>
+              </a-popconfirm>&nbsp;
+              <router-link to="/">Upload</router-link>&nbsp;
+              <router-link to="/">Analyze</router-link>&nbsp;
+              <router-link to="/">QC</router-link>
+            </template>
+          </a-table>
+        </a-col>
+      </a-row>
+    </div>
   </div>
 </template>
 
@@ -142,6 +206,12 @@ export default {
 .nav2 {
   background: @common_black3_color;
   color: #ffffff;
+}
+
+@media (max-width: 576px) {
+  .my-table {
+    margin: 10px;
+  }
 }
 
 .editable-cell {
