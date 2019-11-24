@@ -1,24 +1,24 @@
 /*
- * @Author: TangTao https://www.promiselee.cn/tao
- * @Date: 2019-11-20 17:00:12
- * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-23 00:10:07
- */
-/***文档注释***
- * @Author: TangTao https://www.promiselee.cn/tao
- * @Date: 2019-11-20 13:08:08
+ * @Author: TangTao 杭州电子科技大学 管理学院(2016级) 工商管理
+ * @OfficialWebsite: https://www.promiselee.cn/tao
  * @Email: tangtao2099@outlook.com
- * @LastModifiedBy: TangTao tangtao2099@outlook.com
- * @LastModifiedTime: 2019-11-20 13:08:08
- * @Archive: 路由组件
+ * @GitHub: https://github.com/tangtaoshadow
+ * @Gitee: https://gitee.com/tangtao_2099
+ * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
+ * @Filename:
+ * @Archive: 路由组件 配置
  * @Statement:
- ***/
+ * @Date: 2019-11-23 15:11:30
+ * @Last Modified by:   TangTao © 2019 www.promiselee.cn/tao
+ * @Last Modified time: 2019-11-23 15:11:30
+ */
 
 // import Layout from "../components/layout";
 import HelloWorld from "../components/HelloWorld";
 import HelloWorld2 from "../components/HelloWorld2";
 import HelloWorld3 from "../components/HelloWorld3";
 import Home from "../page/home/index";
+import Project from "../page/project/index";
 
 import { BasicLayout } from "../layouts";
 
@@ -52,9 +52,13 @@ const routes = [
                 }
             },
             {
-                path: "/a/1",
-                name: "HelloWorld1",
-                component: HelloWorld
+                path: "project",
+                name: "project",
+                component: Project,
+                meta: {
+                    title: "项目",
+                    content: "tangtao : project at 2019-11-23 15:11:14"
+                }
             },
             {
                 path: "/a/3",

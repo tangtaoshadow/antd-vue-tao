@@ -9,7 +9,7 @@
  * @Statement:
  * @Date: 2019-11-22 19:37:45
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-23 00:17:34
+ * @Last Modified time: 2019-11-24 13:52:59
  */
 
 // import "./src/layouts/Common.less";
@@ -58,6 +58,9 @@ const vueConfig = {
                     // less vars，customize ant design theme
                     // 使用了阿里云主题色
                     "primary-color": "#FF6A00",
+                    "table-header-color": "#333333",
+                    "table-row-hover-bg": "#f5f5f6",
+                    "table-header-bg": "#f5f5f6",
                     "link-color": "#42B983"
                     // "link-color": "#ff6a00"
                     // 'border-radius-base': '4px'
@@ -83,7 +86,7 @@ const vueConfig = {
         // }
     },
     // disable source map in production
-    productionSourceMap: false,
+    // productionSourceMap: false,
     lintOnSave: undefined
     // babel-loader no-ignore node_modules/*
     //   transpileDependencies: []

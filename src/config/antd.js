@@ -2,19 +2,29 @@
  * @Author: TangTao 杭州电子科技大学 管理学院(2016级) 工商管理
  * @OfficialWebsite: https://www.promiselee.cn/tao
  * @Date: 2019-11-22 19:09:07
- * @Last Modified by:   TangTao
+ * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
  * @Email: tangtao2099@outlook.com
  * @GitHub: https://github.com/tangtaoshadow
  * @Gitee: https://gitee.com/tangtao_2099
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive: ant-design 配置文件
  * @Statement: 这里启用了按需加载的机制 把需要配置的antd组件加载进入
- * @Last Modified time: 2019-11-22 19:09:07
+ * @Last Modified time: 2019-11-23 21:15:47
  */
 
 import Vue from "vue";
 
-import { Button, Icon, Layout, Menu, Row, Col } from "ant-design-vue";
+import {
+    Button,
+    Icon,
+    Layout,
+    Menu,
+    Row,
+    Col,
+    Input,
+    Table,
+    Popconfirm
+} from "ant-design-vue";
 // import "./antd.less";
 
 // 按钮配置
@@ -39,6 +49,14 @@ Vue.component(Icon.name, Icon);
 // grid 配置
 Vue.component(Row.name, Row);
 Vue.component(Col.name, Col);
+
+// 添加表格
+Vue.component(Table.name, Table);
+// 气泡确认框
+Vue.component(Popconfirm.name, Popconfirm);
+
+// 输入组件
+Vue.component(Input.name, Input);
 
 // 输出antd的详细信息
 let antd = {

@@ -9,7 +9,7 @@
  * @Statement:
  * @Date: 2019-11-22 19:36:02
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-23 00:16:50
+ * @Last Modified time: 2019-11-23 21:04:21
  */
 
 /*****************************************************/
@@ -28,11 +28,13 @@ import i18n from "../src/locale";
 import less from "less";
 Vue.use(less);
 
-// 导入 antd 实现的配置
-import { antd } from "./config/antd";
+// // 导入 antd 实现的配置
+// import { antd } from "./config/antd";
 
-// 导入 全局 directive
-import "./config/vue_directives";
+// // 导入 全局 directive
+// import "./config/vue_directives";
+
+import "./config/index";
 
 /******************  导入依赖配置   success  ************************/
 
@@ -40,8 +42,6 @@ import "./config/vue_directives";
 /******************  完成 Vue 配置   ************************/
 /******************  完成 Vue 配置   ************************/
 Vue.config.productionTip = false;
-
-antd;
 
 /******************  完成 Vue 配置 success   ************************/
 
