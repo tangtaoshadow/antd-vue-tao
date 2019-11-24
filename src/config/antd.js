@@ -9,13 +9,14 @@
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive: ant-design 配置文件
  * @Statement: 这里启用了按需加载的机制 把需要配置的antd组件加载进入
- * @Last Modified time: 2019-11-23 21:15:47
+ * @Last Modified time: 2019-11-24 18:29:34
  */
 
 import Vue from "vue";
 
 import {
     Button,
+    Form,
     Icon,
     Layout,
     Menu,
@@ -23,6 +24,9 @@ import {
     Col,
     Input,
     Table,
+    Modal,
+    Select,
+    DatePicker,
     Popconfirm
 } from "ant-design-vue";
 // import "./antd.less";
@@ -57,6 +61,21 @@ Vue.component(Popconfirm.name, Popconfirm);
 
 // 输入组件
 Vue.component(Input.name, Input);
+// 多行文本框
+Vue.component(Input.TextArea.name, Input.TextArea);
+Vue.component(Input.Group.name, Input.Group);
+
+// 模态框
+Vue.component(Modal.name, Modal);
+// 选择框
+Vue.component(Select.name, Select);
+Vue.component(Select.Option.name, Select.Option);
+
+// 表单
+Vue.component(Form.name, Form);
+Vue.component(Form.Item.name, Form.Item);
+
+Vue.component(DatePicker.name, DatePicker);
 
 // 输出antd的详细信息
 let antd = {

@@ -9,7 +9,7 @@
  * @Statement:
  * @Date: 2019-11-22 19:37:45
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-24 13:52:59
+ * @Last Modified time: 2019-11-24 18:52:00
  */
 
 // import "./src/layouts/Common.less";
@@ -61,6 +61,8 @@ const vueConfig = {
                     "table-header-color": "#333333",
                     "table-row-hover-bg": "#f5f5f6",
                     "table-header-bg": "#f5f5f6",
+                    "btn-danger-color": "#dc3545",
+                    "btn-danger-bg": "#FFFFFF",
                     "link-color": "#42B983"
                     // "link-color": "#ff6a00"
                     // 'border-radius-base': '4px'

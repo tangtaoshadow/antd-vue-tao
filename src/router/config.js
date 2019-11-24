@@ -9,8 +9,8 @@
  * @Archive: 路由组件 配置
  * @Statement:
  * @Date: 2019-11-23 15:11:30
- * @Last Modified by:   TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-23 15:11:30
+ * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
+ * @Last Modified time: 2019-11-24 20:24:47
  */
 
 // import Layout from "../components/layout";
@@ -18,7 +18,10 @@ import HelloWorld from "../components/HelloWorld";
 import HelloWorld2 from "../components/HelloWorld2";
 import HelloWorld3 from "../components/HelloWorld3";
 import Home from "../page/home/index";
-import Project from "../page/project/index";
+import Project from "../page/project/list";
+import Library from "../page/library/list";
+import ProjectDetail from "../page/project/detail";
+import LibraryDetail from "../page/library/detail";
 
 import { BasicLayout } from "../layouts";
 
@@ -61,6 +64,33 @@ const routes = [
                 }
             },
             {
+                path: "project/detail/*",
+                name: "project",
+                component: ProjectDetail,
+                meta: {
+                    title: "项目详情",
+                    content: "tangtao : project detail at 2019-11-24 16:18:20"
+                }
+            },
+            {
+                path: "library",
+                name: "library",
+                component: Library,
+                meta: {
+                    title: "库列表",
+                    content: "tangtao : library at 2019-11-24 19:53:36"
+                }
+            },
+            {
+                path: "library/detail/*",
+                name: "libraryDetail",
+                component: LibraryDetail,
+                meta: {
+                    title: "库详情",
+                    content: "tangtao : library at 2019-11-24 19:53:36"
+                }
+            },
+            {
                 path: "/a/3",
                 component: HelloWorld3,
                 name: "HelloWorld3"
@@ -82,6 +112,7 @@ const routes = [
     },
     {
         path: "*",
+        redirect: "/",
         component: () => {
             console.log("一个也没有匹配");
             return null;
