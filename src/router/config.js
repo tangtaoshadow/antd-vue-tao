@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-23 15:11:30
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-24 20:24:47
+ * @Last Modified time: 2019-11-26 22:50:17
  */
 
 // import Layout from "../components/layout";
@@ -19,9 +19,11 @@ import HelloWorld2 from "../components/HelloWorld2";
 import HelloWorld3 from "../components/HelloWorld3";
 import Home from "../page/home/index";
 import Project from "../page/project/list";
-import Library from "../page/library/list";
 import ProjectDetail from "../page/project/detail";
+import Library from "../page/library/list";
 import LibraryDetail from "../page/library/detail";
+import BatchList from "../page/batch/list";
+import BatchDetail from "../page/batch/detail";
 
 import { BasicLayout } from "../layouts";
 
@@ -88,6 +90,24 @@ const routes = [
                 meta: {
                     title: "库详情",
                     content: "tangtao : library at 2019-11-24 19:53:36"
+                }
+            },
+            {
+                path: "batch/list/*",
+                name: "batch list",
+                component: BatchList,
+                meta: {
+                    title: "batch 列表",
+                    content: "tangtao : batch list at 2019-11-26 22:49:24"
+                }
+            },
+            {
+                path: "batch/detail/*",
+                name: "batch Detail",
+                component: BatchDetail,
+                meta: {
+                    title: "库详情",
+                    content: "tangtao : batch detail at 2019-11-26 22:50:11"
                 }
             },
             {

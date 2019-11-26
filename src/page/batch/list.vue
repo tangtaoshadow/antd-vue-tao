@@ -7,40 +7,43 @@
  * @Gitee: https://gitee.com/tangtao_2099
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive:
- * @Statement: library 数据列表
+ * @Statement:
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-25 20:07:39
+ * @Last Modified time: 2019-11-26 22:52:19
  */
 export default {
-  name: "library",
+  name: "project",
   data() {
     return {
       dataSource: [
         {
           key: "0",
-          libraryName: "libraryName 1",
-          compoundCount: "32",
-          owner: "LMS",
+          batchName: "batchName 1",
+          experiments: "32",
+          platform: "QXA01DN",
           acquisitionMethod: "POSLAT",
+          uploadStatus: "100% (44/44)",
           createDate: "2019-11-24 04:33:26",
           description: "tangtao update at 2019-11-24 04:34:02"
         },
         {
           key: "1",
-          libraryName: "DDA-lib-example-egsc",
-          compoundCount: "444",
-          owner: "安绍维",
-          acquisitionMethod: "DDWD",
+          batchName: "batchName 2",
+          experiments: "444",
+          platform: "GSGGSW2",
+          acquisitionMethod: "POSLAU",
+          uploadStatus: "90% (60/54)",
           createDate: "2019-11-24 11:12:00",
           description: "tangtao update at 2019-11-24 04:34:55"
         },
         {
           key: "2",
-          libraryName: "DDA-lib-example-e3ye",
-          compoundCount: "122",
-          owner: "王瑞敏",
+          batchName: "batchName 3",
+          experiments: "122",
+          platform: "DWHEDG33",
           acquisitionMethod: "GTOSLAT",
+          uploadStatus: "44% (100/44)",
           createDate: "2019-11-24 15:44:20",
           description: "tangtao update at 2019-11-24 14:11:23"
         }
@@ -51,15 +54,15 @@ export default {
           title: (
             <span style="font-size:15px;font-weight:600;">Batch Name</span>
           ),
-          dataIndex: "libraryName",
+          dataIndex: "batchName",
           // width: "30%",
           scopedSlots: { customRender: "name" }
         },
         {
           title: (
-            <span style="font-size:15px;font-weight:600;">Compoundcount</span>
+            <span style="font-size:15px;font-weight:600;">Experiments</span>
           ),
-          dataIndex: "compoundCount",
+          dataIndex: "experiments",
           // 自定义渲染 支持jsx 语法
           // customRender: (text, record, index) => {
           //   console.log(text, record, index);
@@ -70,9 +73,9 @@ export default {
           }
         },
         {
-          title: <span style="font-size:15px;font-weight:600;">Owner</span>,
-          dataIndex: "owner",
-          scopedSlots: { customRender: "owner" }
+          title: <span style="font-size:15px;font-weight:600;">Platform</span>,
+          dataIndex: "platform",
+          scopedSlots: { customRender: "platform" }
         },
         {
           title: (
@@ -82,7 +85,15 @@ export default {
           ),
           dataIndex: "acquisitionMethod"
         },
-
+        {
+          title: (
+            <span style="font-size:15px;font-weight:600;">Upload Status</span>
+          ),
+          dataIndex: "uploadStatus",
+          customRender: text => {
+            return <span class="font_green_color">{text}</span>;
+          }
+        },
         {
           title: (
             <span style="font-size:15px;font-weight:600;">Create Date</span>
@@ -107,6 +118,10 @@ export default {
           scopedSlots: { customRender: "operation" }
         }
       ],
+      customHeaderRow: (record, index) => {
+        console.log(record, index);
+        return <h3>ss</h3>;
+      },
       loading: false,
       visible: false
     };
@@ -128,10 +143,11 @@ export default {
       const { count, dataSource } = this;
       const newData = {
         key: count,
-        libraryName: `Edit Me ${count}`,
-        compoundCount: 312,
-        owner: `tangtao. ${count}`,
+        batchName: `Edit Me ${count}`,
+        experiments: 312,
+        platform: `tangtao. ${count}`,
         acquisitionMethod: "HDU",
+        uploadStatus: "60% (70/42)",
         createDate: "2019-11-24 16:11:19",
         description: "tangtao update at 2019-11-24 16:11:23"
       };
@@ -161,7 +177,7 @@ export default {
   <div>
     <a-row type="flex" class="nav2" justify="center" style>
       <a-col :xs="23" style="max-width:1500px;padding:10px 0px;text-align:left;font-size:22px;">
-        Libraries
+        Batches
         <div
           v-pointer
           style="display:inline;font-size:26px;font-weight:700;padding-left:20px;"
@@ -173,9 +189,15 @@ export default {
     <div style="max-width:1500px;margin:auto;margin-top:30px;">
       <a-row type="flex" justify="center" style>
         <a-col :sm="23" class="my-table" style="background:#FFF;padding:10px;">
-          <a-table :bordered="false" :size="'middle'" :dataSource="dataSource" :columns="columns">
+          <a-table
+            :bordered="false"
+            :size="'middle'"
+            :dataSource="dataSource"
+            :customHeaderRow="customHeaderRow"
+            :columns="columns"
+          >
             <template slot="name" v-pointer slot-scope="text">
-              <router-link :to="'/library/detail/' + text">
+              <router-link :to="'/batch/detail/' + text">
                 <span v-html="text"></span>
                 <!-- <edit-table-cell
                                     :text="text"
@@ -186,13 +208,11 @@ export default {
               </router-link>
             </template>
 
-            <template slot="owner" slot-scope="text">
+            <template slot="platform" slot-scope="text">
               <div v-html="text"></div>
             </template>
 
             <template slot="operation" slot-scope="text, record">
-              <!-- <router-link to="/">Detail</router-link>&nbsp; -->
-
               <a-popconfirm
                 v-if="dataSource.length"
                 title="Sure to delete?"
@@ -200,6 +220,9 @@ export default {
               >
                 <a class="font_red_color" href="javascript:;">Delete</a>
               </a-popconfirm>&nbsp;
+              <router-link to="/">Upload</router-link>&nbsp;
+              <router-link to="/">Analyze</router-link>&nbsp;
+              <router-link to="/">QC</router-link>
             </template>
           </a-table>
           <a-button class="editable-add-btn" @click="handleAdd">Add</a-button>
@@ -214,7 +237,7 @@ export default {
                 <div
                   style="font-size:16px;font-weight:600;float:left;text-align:right;padding-right:10px;
                                    width:165px;"
-                >Project Name&nbsp;:</div>
+                >Batch Name&nbsp;:</div>
                 <div style="float:left;">
                   <a-input style="max-width:200px;height:30px;" />
                 </div>
@@ -224,7 +247,7 @@ export default {
                   style="font-size:16px;font-weight:600;
                                     float:left;text-align:right;padding-right:10px;
                                    width:165px;"
-                >Owner&nbsp;:</div>
+                >Platform&nbsp;:</div>
                 <div style="float:left;">
                   <a-input style="max-width:200px;height:30px;" />
                 </div>
@@ -247,7 +270,7 @@ export default {
               <div style="line-height:30px;min-height:40px;padding:5px 0px;">
                 <div style="font-size:16px;font-weight:600;margin-bottom:5px;">Description:</div>
                 <div>
-                  <a-textarea placeholder="请输入..." :rows="4" />
+                  <a-textarea placeholder="Basic usage" :rows="4" />
                 </div>
               </div>
             </div>
