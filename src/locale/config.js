@@ -3,14 +3,14 @@
  * @OfficialWebsite: https://www.promiselee.cn/tao
  * @Filename:
  * @Date: 2019-11-22 19:14:18
- * @Last Modified by:   TangTao
+ * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
  * @Email: tangtao2099@outlook.com
  * @GitHub: https://github.com/tangtaoshadow
  * @Gitee: https://gitee.com/tangtao_2099
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive: 国际化配置文件
  * @Statement: 这里负责导入支持的语言json 即加载所有语言
- * @Last Modified time: 2019-11-22 19:14:18
+ * @Last Modified time: 2019-11-27 12:44:49
  */
 
 import zhCN from "./zhCN";

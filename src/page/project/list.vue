@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-26 22:51:22
+ * @Last Modified time: 2019-11-27 12:44:16
  */
 export default {
   name: "project",
@@ -215,7 +215,7 @@ export default {
                 <a class="font_red_color" href="javascript:;">Delete</a>
               </a-popconfirm>&nbsp;
               <router-link to="/">Upload</router-link>&nbsp;
-              <router-link to="/">Analyze</router-link>&nbsp;
+              <router-link to="/project/analyse/237e3434734">Analyse</router-link>&nbsp;
               <router-link to="/">QC</router-link>
             </template>
           </a-table>

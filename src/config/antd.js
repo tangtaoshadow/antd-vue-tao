@@ -9,7 +9,7 @@
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive: ant-design 配置文件
  * @Statement: 这里启用了按需加载的机制 把需要配置的antd组件加载进入
- * @Last Modified time: 2019-11-26 21:36:40
+ * @Last Modified time: 2019-11-27 12:20:40
  */
 
 import Vue from "vue";
@@ -28,6 +28,7 @@ import {
     Select,
     DatePicker,
     Tabs,
+    Upload,
     Popconfirm
 } from "ant-design-vue";
 // import "./antd.less";
@@ -85,6 +86,8 @@ Vue.component(DatePicker.name, DatePicker);
 Vue.component(Tabs.name, Tabs);
 // tab 窗格
 Vue.component(Tabs.TabPane.name, Tabs.TabPane);
+Vue.component(Upload.name, Upload);
+Vue.component(Upload.Dragger.name, Upload.Dragger);
 
 // 输出antd的详细信息
 let antd = {
