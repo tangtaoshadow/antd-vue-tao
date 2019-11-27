@@ -10,15 +10,160 @@
  * @Statement:
  * @Date: 2019-11-27 16:38:28
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-27 16:38:36
+ * @Last Modified time: 2019-11-27 17:34:36
  */
 
 import { Modal } from "ant-design-vue";
 let Antd = { Modal };
+
+const data2 = [
+    {
+        key: "row1",
+        experimentName: "experimentName 1",
+        type: "wwwweee",
+        platform: "OPEDHGE",
+        groupingInfo:
+            "My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park."
+    },
+    {
+        key: "row2",
+        experimentName: "experimentName 2",
+        type: "Hedgegted",
+        platform: "GTET353",
+        groupingInfo:
+            "My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park."
+    },
+    {
+        key: "row3",
+        experimentName: "experimentName 3",
+        type: "DyyGRwrr3",
+        platform: "EDETRRRR",
+        groupingInfo:
+            "My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park."
+    }
+];
+
+const data = [
+    {
+        key: 1,
+        batchName: "batchName 1",
+        acquisitionMethod: "wwwweee",
+        platform: "OPEDHGE",
+        expandedRowTable: data2
+    },
+    {
+        key: 2,
+        batchName: "batchName 2",
+        acquisitionMethod: "Hedgegted",
+        platform: "GTET353",
+        expandedRowTable: data2
+    },
+    {
+        key: 3,
+        batchName: "batchName 3",
+        acquisitionMethod: "DyyGRwrr3",
+        platform: "EDETRRRR",
+        expandedRowTable: data2
+    }
+];
+
 export default {
     name: "batchAnalyse",
     data() {
         return {
+            columns: [
+                {
+                    title: (
+                        <span style="font-size:15px;font-weight:600;">
+                            Batch Name
+                        </span>
+                    ),
+                    dataIndex: "batchName",
+                    key: "name"
+                },
+                {
+                    title: (
+                        <span style="font-size:15px;font-weight:600;">
+                            Acquisition Method
+                        </span>
+                    ),
+                    dataIndex: "acquisitionMethod",
+                    key: "acquisitionMethod"
+                },
+                {
+                    title: (
+                        <span style="font-size:15px;font-weight:600;">
+                            Platform
+                        </span>
+                    ),
+                    dataIndex: "platform",
+                    key: "platform"
+                },
+                {
+                    title: (
+                        <span style="font-size:15px;font-weight:600;">
+                            Action
+                        </span>
+                    ),
+                    dataIndex: "",
+                    key: "x",
+                    scopedSlots: { customRender: "action" }
+                }
+            ],
+            columns2: [
+                {
+                    title: (
+                        <span style="font-size:15px;font-weight:600;">
+                            Experiment Name
+                        </span>
+                    ),
+                    dataIndex: "experimentName",
+                    key: "experimentName"
+                },
+                {
+                    title: (
+                        <span style="font-size:15px;font-weight:600;">
+                            Type
+                        </span>
+                    ),
+                    dataIndex: "type",
+                    key: "type"
+                },
+                {
+                    title: (
+                        <span style="font-size:15px;font-weight:600;">
+                            Platform
+                        </span>
+                    ),
+                    dataIndex: "platform",
+                    key: "platform"
+                },
+                {
+                    title: (
+                        <span style="font-size:15px;font-weight:600;">
+                            GroupingInfo
+                        </span>
+                    ),
+                    dataIndex: "groupingInfo",
+                    key: "groupingInfo"
+                }
+            ],
+            rowSelection: {
+                onChange: (selectedRowKeys, selectedRows) => {
+                    console.log(
+                        `selectedRowKeys: ${selectedRowKeys}`,
+                        "selectedRows: ",
+                        selectedRows
+                    );
+                },
+                onSelect: (record, selected, selectedRows) => {
+                    console.log(record, selected, selectedRows);
+                },
+                onSelectAll: (selected, selectedRows, changeRows) => {
+                    console.log(selected, selectedRows, changeRows);
+                }
+            },
+            data,
             loading: false,
             visible: false
         };
@@ -74,7 +219,7 @@ export default {
                 :xs="23"
                 style="max-width:1500px;padding:10px 0px;text-align:left;font-size:22px;"
             >
-                Projects Analyse
+                Batch Analyse
                 <div
                     v-pointer
                     style="display:inline;font-size:22px;font-weight:500;padding-left:20px;"
@@ -90,368 +235,35 @@ export default {
                     :sm="23"
                     style="background:#FFF;padding:10px;line-height:30px;font-size:14px;font-weight:500;"
                 >
-                    <!-- new Line -->
-                    <!-- new Line -->
-
-                    <!-- 这里是左边 布局样式不一样 不能搞混 -->
-                    <a-col
-                        :xs="24"
-                        :lg="10"
-                        :xl="8"
-                        :xxl="7"
-                        style="font-weight:600;text-align:center;"
-                    >
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
-                        >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
+                    <a-tabs style="padding:10px 0px;">
+                        <a-tab-pane tab="Step 1" key="1">
+                            <a-table
+                                :columns="columns"
+                                :defaultExpandedRowKeys="[1]"
+                                :dataSource="data"
                             >
-                                Project Name&nbsp;:
-                            </div>
-                            <div style="float:left;">
-                                <a-input
-                                    :disabled="true"
-                                    :defaultValue="'dgggrrrrf'"
-                                    style="max-width:200px;height:30px;"
-                                />
-                            </div>
-                        </div>
-                    </a-col>
-
-                    <!-- 这里是右边 布局样式不一样 不能搞混 -->
-                    <a-col
-                        :xs="24"
-                        :lg="10"
-                        :xl="12"
-                        style="font-weight:600;text-align:center;"
-                    >
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
-                        >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                Project ID&nbsp;:
-                            </div>
-                            <div style="float:left;">
-                                <a-input
-                                    :disabled="true"
-                                    :defaultValue="12222"
-                                    style="max-width:200px;height:30px;"
-                                />
-                            </div>
-                        </div>
-                    </a-col>
-
-                    <!-- new Line -->
-                    <!-- new Line -->
-
-                    <!-- 这里是左边 布局样式不一样 不能搞混 -->
-                    <a-col
-                        :xs="24"
-                        :lg="10"
-                        :xl="8"
-                        :xxl="7"
-                        style="font-weight:600;text-align:center;"
-                    >
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
-                        >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                RI Library&nbsp;:
-                            </div>
-                            <div style="float:left;">
-                                <a-select
-                                    defaultValue="hdu"
-                                    style="max-width: 200px;height:30px;"
+                                <a slot="action" href="javascript:;">Delete</a>
+                                <div
+                                    slot="expandedRowRender"
+                                    slot-scope="record"
+                                    style="margin: 0"
                                 >
-                                    <a-select-option value="hdu" key="22"
-                                        >wang ruimi bbasgstt22
-                                    </a-select-option>
-                                    <a-select-option value="tangtao" key="11"
-                                        >Tangtao</a-select-option
+                                    <a-table
+                                        :pagination="{ hideOnSinglePage: true }"
+                                        :columns="columns2"
+                                        :size="'small'"
+                                        :dataSource="record.expandedRowTable"
                                     >
-                                    <a-select-option
-                                        value="disabled"
-                                        disabled
-                                        key="23"
-                                        >https://www.promiselee.cn/tao</a-select-option
-                                    >
-                                    <a-select-option value="hangzhou" key="4"
-                                        >lms</a-select-option
-                                    >
-                                </a-select>
-                            </div>
-                        </div>
-                    </a-col>
-
-                    <!-- 这里是右边 布局样式不一样 不能搞混 -->
-                    <a-col
-                        :xs="24"
-                        :lg="10"
-                        :xl="12"
-                        style="font-weight:600;text-align:center;"
-                    >
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
+                                    </a-table>
+                                </div> </a-table
+                        ></a-tab-pane>
+                        <a-tab-pane tab="Step 2" key="2"
+                            >Content of Step 2</a-tab-pane
                         >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                Compound Library&nbsp;:
-                            </div>
-                            <div style="float:left;">
-                                <a-select
-                                    defaultValue="hdu"
-                                    style="max-width: 400px;height:30px;"
-                                >
-                                    <a-select-option value="hdu" key="22"
-                                        >Hangzhuo xihu propro
-                                    </a-select-option>
-                                    <a-select-option value="tangtao" key="11"
-                                        >Tangtao</a-select-option
-                                    >
-                                    <a-select-option
-                                        value="disabled"
-                                        disabled
-                                        key="23"
-                                        >https://www.promiselee.cn/tao</a-select-option
-                                    >
-                                    <a-select-option value="hangzhou" key="4"
-                                        >hangzhou</a-select-option
-                                    >
-                                </a-select>
-                            </div>
-                        </div>
-                    </a-col>
-
-                    <!-- new Line end -->
-
-                    <!-- new Line -->
-                    <!-- new Line -->
-
-                    <!-- 这里是左边 布局样式不一样 不能搞混 -->
-                    <a-col
-                        :xs="24"
-                        :lg="10"
-                        :xl="8"
-                        :xxl="7"
-                        style="font-weight:600;text-align:center;"
-                    >
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
+                        <a-tab-pane tab="Step 3" key="3"
+                            >Content of Step 3</a-tab-pane
                         >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                RT Window&nbsp;:
-                            </div>
-                            <div style="float:left;">
-                                <a-input-number
-                                    style="max-width:200px;height:30px;"
-                                    size="default"
-                                    :step="0.1"
-                                    :min="0"
-                                    :max="100"
-                                    :defaultValue="0.4"
-                                />
-                            </div>
-                        </div>
-                    </a-col>
-
-                    <!-- 这里是右边 布局样式不一样 不能搞混 -->
-                    <a-col
-                        :xs="24"
-                        :lg="10"
-                        :xl="12"
-                        style="font-weight:600;text-align:center;"
-                    >
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
-                        >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                M/z Window&nbsp;:
-                            </div>
-                            <div style="float:left;">
-                                <a-input-number
-                                    style="max-width:200px;height:30px;margin-right:15px;"
-                                    size="default"
-                                    :min="0"
-                                    :max="1000"
-                                    :defaultValue="13"
-                                />
-                                <a-checkbox>PPM</a-checkbox>
-                            </div>
-                        </div>
-                    </a-col>
-
-                    <!-- new Line end -->
-
-                    <!-- new Line -->
-                    <!-- new Line -->
-
-                    <!-- 这里是左边 布局样式不一样 不能搞混 -->
-                    <a-col :xs="24" style="font-weight:600;text-align:center;">
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
-                        >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                Create Date&nbsp;:
-                            </div>
-                            <div style="float:left;">
-                                <a-input-group compact>
-                                    <a-date-picker
-                                        style="max-width:240px;height:30px;"
-                                    />
-                                </a-input-group>
-                            </div>
-                        </div>
-                    </a-col>
-                    <!-- new Line end -->
-
-                    <!-- new Line -->
-                    <!-- new Line -->
-
-                    <!-- 这里是左边 布局样式不一样 不能搞混 -->
-                    <a-col :xs="24" style="font-weight:600;text-align:center;">
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
-                        >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                Algorithm Relative Filter Criterias&nbsp;:
-                            </div>
-                            <div style="float:left;">
-                                <a-input
-                                    :defaultValue="'fegfgfg'"
-                                    style="max-width:200px;height:30px;margin-top:30px;"
-                                />
-                            </div>
-                        </div>
-                    </a-col>
-                    <!-- new Line end -->
-
-                    <!-- new Line -->
-                    <!-- new Line -->
-
-                    <!-- 这里是左边 布局样式不一样 不能搞混 -->
-                    <a-col :xs="24" style="font-weight:600;text-align:center;">
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
-                        >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                Notes&nbsp;:
-                            </div>
-                            <div style="float:left;">
-                                <a-textarea
-                                    :autosize="{ minRows: 4, maxRows: 15 }"
-                                    placeholder="notes  ......"
-                                    style="min-width:300px;margin-top:5px;"
-                                />
-                            </div>
-                        </div>
-                    </a-col>
-                    <!-- new Line end -->
-
-                    <!-- new Line -->
-                    <!-- new Line -->
-
-                    <!-- 这里是左边 布局样式不一样 不能搞混 -->
-                    <a-col :xs="24" style="font-weight:600;text-align:center;">
-                        <div
-                            style="line-height:30px;height:40px;padding:5px 0px;"
-                        >
-                            <div
-                                style="font-weight:600;float:left;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                Feature Scores&nbsp;:
-                            </div>
-                            <div
-                                style="float:left;text-align:left;word-wrap: break-word;word-break: break-all;max-width:300px;padding:0px 0px 0px 10px;"
-                            >
-                                <a-checkbox style="margin-left:8px;"
-                                    >scores1</a-checkbox
-                                >
-                                <a-checkbox>scores2</a-checkbox>
-                                <a-checkbox>scores3</a-checkbox>
-                                <a-checkbox>scores4</a-checkbox>
-                                <a-checkbox>scores5</a-checkbox>
-                                <a-checkbox>scores6</a-checkbox>
-                                <a-checkbox>scores7</a-checkbox>
-                                <a-checkbox>scores8</a-checkbox>
-                                <a-checkbox>scores9</a-checkbox>
-                            </div>
-                        </div>
-                    </a-col>
-                    <!-- new Line end -->
-
-                    <!-- new Line -->
-                    <!-- new Line -->
-
-                    <!-- 这里是左边 布局样式不一样 不能搞混 -->
-                    <a-col :xs="24" style="font-weight:600;text-align:center;">
-                        <div style="line-height:30px;padding:5px 0px;">
-                            <div
-                                style="font-weight:600;text-align:right;padding-right:10px;
-                                   width:170px;"
-                            >
-                                Experiment List(22)&nbsp;:
-                            </div>
-                            <div
-                                style="margin-top:5px;padding:0px 0px 0px 15px;text-align:left;margin-bottom:30px;"
-                            >
-                                <a-tag color="#8069f2">
-                                    F20190530liangx_SILAC_K562_DIA LHtitra0_1(5
-                                    d17a2821fb7212da565015f)
-                                </a-tag>
-                                <a-tag color="#8069f2">
-                                    F20190530liangx_SILAC_K562_DIA LHtitra0_1(5
-                                    d17a2821fb7212da565015f)
-                                </a-tag>
-                                <a-tag color="#8069f2">
-                                    F20190530liangx_SILAC_K562_DIA LHtitra0_1(5
-                                    d17a2821fb7212da565015f)
-                                </a-tag>
-                                <a-tag color="#8069f2">
-                                    F20190530liangx_SILAC_K562_DIA LHtitra0_1(5
-                                    d17a2821fb7212da565015f)
-                                </a-tag>
-                                <a-tag color="#8069f2">
-                                    F20190530liangx_SILAC_K562_DIA LHtitra0_1(5
-                                    d17a2821fb7212da565015f)
-                                </a-tag>
-                            </div>
-                        </div>
-                    </a-col>
-                    <!-- new Line end -->
-
-                    <a-col :sm="23" style="">
-                        <div
-                            style="text-align:center;max-width:400px;padding-bottom:30px;"
-                        >
-                            <a-button>Start Analyze</a-button>
-                        </div>
-                    </a-col>
+                    </a-tabs>
 
                     <!-- a-modal -->
                     <a-modal
