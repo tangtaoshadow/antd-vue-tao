@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-23 15:11:30
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-27 10:31:28
+ * @Last Modified time: 2019-11-27 16:41:53
  */
 
 // import Layout from "../components/layout";
@@ -20,11 +20,13 @@ import HelloWorld3 from "../components/HelloWorld3";
 import Home from "../page/home/index";
 import Project from "../page/project/list";
 import ProjectDetail from "../page/project/detail";
+import ProjectAnalyse from "../page/project/analyse";
 import Library from "../page/library/list";
 import LibraryDetail from "../page/library/detail";
 import BatchList from "../page/batch/list";
 import BatchDetail from "../page/batch/detail";
 import BatchUpload from "../page/batch/upload";
+import BatchAnalyse from "../page/batch/analyse";
 
 import { BasicLayout } from "../layouts";
 
@@ -76,6 +78,15 @@ const routes = [
                 }
             },
             {
+                path: "project/analyse/*",
+                name: "project",
+                component: ProjectAnalyse,
+                meta: {
+                    title: "项目分析",
+                    content: "tangtao : project analyse at 2019-11-27 15:22:46"
+                }
+            },
+            {
                 path: "library",
                 name: "library",
                 component: Library,
@@ -118,6 +129,15 @@ const routes = [
                 meta: {
                     title: "Batch Upload",
                     content: "tangtao : batch upload at 2019-11-27 10:30:42"
+                }
+            },
+            {
+                path: "batch/analyse/*",
+                name: "batchAnalyse",
+                component: BatchAnalyse,
+                meta: {
+                    title: "Batch Analyse",
+                    content: "tangtao : batch analyse at 2019-11-27 16:40:04"
                 }
             },
             {

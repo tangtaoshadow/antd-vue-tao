@@ -8,15 +8,15 @@
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive:
  * @Statement:
- * @Date: 2019-11-27 12:41:05
+ * @Date: 2019-11-27 16:38:28
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-27 16:32:36
+ * @Last Modified time: 2019-11-27 16:38:36
  */
 
 import { Modal } from "ant-design-vue";
 let Antd = { Modal };
 export default {
-    name: "projectAnalyse",
+    name: "batchAnalyse",
     data() {
         return {
             loading: false,
