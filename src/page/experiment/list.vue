@@ -10,7 +10,7 @@
  * @Statement: experimentList 数据列表
  * @Date: 2019-11-30 17:36:17
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-01 01:10:43
+ * @Last Modified time: 2019-12-01 01:27:44
  */
 export default {
   name: "experimentList",
@@ -220,7 +220,61 @@ export default {
         <a-col :sm="23" class="my-table" style="background:#FFF;padding:10px;">
           <div style="padding:10px 5px;">
             <a-tabs defaultActiveKey="1" :tabPosition="'left'" style="min-height:500px;">
-              <a-tab-pane tab="New Batch" key="new">111111</a-tab-pane>
+              <a-tab-pane tab="New Batch" key="new">
+                <template slot="footer">
+                  <a-button key="back" @click="handleCancel">Cancel</a-button>
+                  <a-button key="submit" type="primary" :loading="loading" @click="handleOk">Add</a-button>
+                </template>
+                <div>
+                  <div style="line-height:30px;height:40px;padding:5px 0px;">
+                    <div
+                      style="font-size:16px;font-weight:600;float:left;text-align:right;padding-right:10px;
+                                   width:200px;"
+                    >Batch Name&nbsp;:</div>
+                    <div style="float:left;">
+                      <a-input style="max-width:600px;height:30px;" />
+                    </div>
+                  </div>
+                  <div style="line-height:30px;height:40px;padding:5px 0px;">
+                    <div
+                      style="font-size:16px;font-weight:600;
+                                    float:left;text-align:right;padding-right:10px;
+                                   width:200px;"
+                    >Platform&nbsp;:</div>
+                    <div style="float:left;">
+                      <a-input style="max-width:200px;height:30px;" />
+                    </div>
+                  </div>
+                  <div style="line-height:30px;height:40px;padding:5px 0px;">
+                    <div
+                      style="font-size:16px;font-weight:600;
+                                    float:left;text-align:right;padding-right:10px;
+                                   width:200px;"
+                    >Acquisition Method&nbsp;:</div>
+                    <div style="float:left;">
+                      <a-select defaultValue="tangtao" style="max-width: 200px;height:30px;">
+                        <a-select-option value="HDU" key="22">HDU</a-select-option>
+                        <a-select-option value="tangtao" key="11">Tangtao</a-select-option>
+                        <a-select-option value="disabled" disabled key="23">2019</a-select-option>
+                        <a-select-option value="hangzhou" key="4">hangzhou</a-select-option>
+                      </a-select>
+                    </div>
+                  </div>
+                  <div style="line-height:30px;min-height:40px;padding:5px 0px;">
+                    <div
+                      style="font-size:16px;font-weight:600;text-align:right;width:200px;padding-right:10px;float:left;"
+                    >Description:</div>
+                    <div style="text-align:left;float:left;">
+                      <a-textarea
+                        placeholder="test ..."
+                        :autosize="{ minRows: 4, maxRows: 8 }"
+                        style="width:400px;"
+                        :rows="4"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </a-tab-pane>
               <a-tab-pane tab="Batch 1" key="1">
                 <div style="text-align:left;">
                   <a-button class="table-operation-btn" type="primary">Upload</a-button>
