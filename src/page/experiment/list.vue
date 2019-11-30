@@ -10,7 +10,7 @@
  * @Statement: experimentList 数据列表
  * @Date: 2019-11-30 17:36:17
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-01 00:06:02
+ * @Last Modified time: 2019-12-01 01:10:43
  */
 export default {
   name: "experimentList",
@@ -126,12 +126,12 @@ export default {
           customRender: text => {
             return <span class="">{text}</span>;
           }
-        },
-        {
-          title: <span style="font-size:15px;font-weight:600;">Operation</span>,
-          dataIndex: "operation",
-          scopedSlots: { customRender: "operation" }
         }
+        // ,{
+        //   title: <span style="font-size:15px;font-weight:600;">Operation</span>,
+        //   dataIndex: "operation",
+        //   scopedSlots: { customRender: "operation" }
+        // }
       ],
       loading: false,
       visible: false,
@@ -230,6 +230,19 @@ export default {
                   <a-button class="table-operation-btn" type="primary">Sample Result</a-button>
                   <a-button class="table-operation-btn" type="primary">Edit</a-button>
                   <a-button class="table-operation-btn" type="primary">Analyze</a-button>
+
+                  <a-dropdown>
+                    <a-menu slot="overlay" @click="handleMenuClick">
+                      <a-menu-item key="1" class="list-btns">Edit</a-menu-item>
+                      <a-menu-item key="2" class="list-btns">Move</a-menu-item>
+
+                      <a-menu-item key="3" class="list-btns list-btns-danger">Delete</a-menu-item>
+                    </a-menu>
+                    <a-button style="margin-left: 8px">
+                      Multiple
+                      <a-icon type="down" />
+                    </a-button>
+                  </a-dropdown>
                 </div>
                 <a-table
                   :bordered="false"
@@ -303,7 +316,7 @@ export default {
                   <br />
                   <br />
                   <h2>猜猜我在哪？</h2>
-                  <pre title="答案请联系作者：tangtao">
+                  <pre title="答案请联系作者：王瑞敏">
               .- &lt;O&gt; -.        .-====-.      ,-------.      .-=&lt;&gt;=-.
             /_-\'''/-_\      / / '' \ \     |,-----.|     /__----__\
             |/  o) (o  \|    | | ')(' | |   /,'-----'.\   |/ (')(') \|
@@ -393,6 +406,27 @@ export default {
   border-color: @common_red_color;
 }
 
+.list-btns {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.list-btns:hover {
+  color: @common_blue_color;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.list-btns-danger {
+  color: @common_red_color !important;
+}
+
+.list-btns-danger:hover {
+  color: @common_red_color;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
 .table-btns {
   height: 30px !important;
   line-height: 24px;
@@ -419,6 +453,19 @@ export default {
   color: #ffffff;
   border-color: @common_blue_color;
 }
+
+.table-operation-btn-danger {
+  color: #ffffff !important;
+  background: #dc3545;
+  border-color: #dc3545;
+  // background: @common_red_color !important;
+  // border-color: @common_red_color !important;
+}
+.table-operation-btn-danger:hover {
+  background: #c82333 !important;
+  border-color: #bd2130 !important;
+}
+
 .table-operation-btn:hover {
   background-color: #0069d9;
   border-color: #0062cc;
