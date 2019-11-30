@@ -10,7 +10,7 @@
  * @Statement: library 数据列表
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-25 20:07:39
+ * @Last Modified time: 2019-11-30 20:18:25
  */
 export default {
   name: "library",
@@ -24,7 +24,8 @@ export default {
           owner: "LMS",
           acquisitionMethod: "POSLAT",
           createDate: "2019-11-24 04:33:26",
-          description: "tangtao update at 2019-11-24 04:34:02"
+          description:
+            "我是陆老师,Fight!!(ｏ^-^)尸~''☆ミ☆ミ ؏؏☝ᖗ乛◡乛ᖘ☝؏؏完美"
         },
         {
           key: "1",
@@ -33,7 +34,7 @@ export default {
           owner: "安绍维",
           acquisitionMethod: "DDWD",
           createDate: "2019-11-24 11:12:00",
-          description: "tangtao update at 2019-11-24 04:34:55"
+          description: "我是安博士，emmm… φ(๑˃∀˂๑)♪ 学习是我的全部"
         },
         {
           key: "2",
@@ -42,7 +43,7 @@ export default {
           owner: "王瑞敏",
           acquisitionMethod: "GTOSLAT",
           createDate: "2019-11-24 15:44:20",
-          description: "tangtao update at 2019-11-24 14:11:23"
+          description: "我姓王,我是最强王者,(๑╹ヮ╹๑)ﾉ Studying makes me happy"
         }
       ],
       count: 4,

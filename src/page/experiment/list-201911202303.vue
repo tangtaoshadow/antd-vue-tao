@@ -7,105 +7,112 @@
  * @Gitee: https://gitee.com/tangtao_2099
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive:
- * @Statement:
- * @Date: 2019-11-22 20:00:34
+ * @Statement: experimentList 数据列表
+ * @Date: 2019-11-30 17:36:17
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-30 20:20:59
+ * @Last Modified time: 2019-11-30 23:01:25
  */
 export default {
-  name: "project",
+  name: "experimentList",
   data() {
     return {
       dataSource: [
         {
           key: "0",
-          projectName: "projectName 1",
-          experiments: "32",
-          platform: "QXA01DN",
-          lastModifiedDate: "2019-11-26 22:26:19",
-          createDate: "2019-11-24 04:33:26",
-          description: "(((((((((((っ•ω•)っ Σ(σ｀•ω•´)σ 起飞！"
+          expermentName: "expermentName 1",
+          mode: "Positive",
+          platforn: "EAR QXA01",
+          type: "POSLAT",
+          batch: "32",
+          inject: "22",
+          classLabel: "Control / Experiment / *"
         },
         {
           key: "1",
-          projectName: "projectName 2",
-          experiments: "444",
-          platform: "GSGGSW2",
-          lastModifiedDate: "2019-11-26 22:26:24",
-          createDate: "2019-11-24 11:12:00",
-          description: "tangtao update at 2019-11-24 04:34:55"
+          expermentName: "DDA-lib-example-egsc",
+          mode: "Positive",
+          platforn: "安绍维",
+          type: "Standard",
+          batch: "22",
+          inject: "22",
+          classLabel: "Control / Experiment / *"
         },
         {
           key: "2",
-          projectName: "projectName 3",
-          experiments: "122",
-          platform: "DWHEDG33",
-          lastModifiedDate: "2019-11-26 22:26:28",
-          createDate: "2019-11-24 15:44:20",
-          description: "tangtao update at 2019-11-24 14:11:23"
+          expermentName: "QXA01DNNEG20190627_DIAN1019VWHUMAN_HUMAN_PLASMA2_01",
+          mode: "Negative",
+          platforn: "瑞敏哥",
+          type: "GTOSLAT",
+          batch: "12",
+          inject: "23",
+          classLabel: "Healthy / Step 1, 2, 3, 4"
         }
       ],
       count: 4,
       columns: [
         {
           title: (
-            <span style="font-size:15px;font-weight:600;">Project Name</span>
+            <span style="font-size:15px;font-weight:600;">Experment Name</span>
           ),
-          dataIndex: "projectName",
+          dataIndex: "expermentName",
           // width: "30%",
-          scopedSlots: { customRender: "name" }
+          scopedSlots: { customRender: "experimentName" }
         },
         {
-          title: <span style="font-size:15px;font-weight:600;">Batches</span>,
-          dataIndex: "experiments",
+          title: <span style="font-size:15px;font-weight:600;">Mode</span>,
+          dataIndex: "mode",
           // 自定义渲染 支持jsx 语法
           // customRender: (text, record, index) => {
           //   console.log(text, record, index);
           //   return text;
           // }
-          scopedSlots: { customRender: "batch" }
-
-          //   customRender: text => {
-          //     return (
-          //       <a href="/project/">
-          //         <span class="font_green_color">{text}</span>
-          //       </a>
-          //     );
-          //   }
-        },
-        {
-          title: <span style="font-size:15px;font-weight:600;">Platform</span>,
-          dataIndex: "platform",
-          scopedSlots: { customRender: "platform" }
-        },
-
-        {
-          title: (
-            <span style="font-size:15px;font-weight:600;">Create Date</span>
-          ),
-          dataIndex: "createDate",
           customRender: text => {
-            return <span class="font_orange_color">{text}</span>;
-          }
+            return <span class="font_second_color">{text}</span>;
+          },
+          filters: [
+            { text: "Positive", value: "Positive" },
+            { text: "Negative", value: "Negative" }
+          ],
+          onFilter: (value, record) => record.mode.indexOf(value) === 0
         },
         {
-          title: (
-            <span style="font-size:15px;font-weight:600;">
-              Last Modified Date
-            </span>
-          ),
-          dataIndex: "lastModifiedDate",
-          customRender: text => {
-            return <span class="font_green_color">{text}</span>;
-          }
+          title: <span style="font-size:15px;font-weight:600;">Platforn</span>,
+          dataIndex: "platforn",
+          scopedSlots: { customRender: "platforn" },
+          filters: [
+            { text: "瑞敏哥", value: "瑞敏哥" },
+            { text: "安绍维", value: "安绍维" }
+          ],
+          onFilter: (value, record) => record.platforn.indexOf(value) === 0
+        },
+        {
+          title: <span style="font-size:15px;font-weight:600;">Batch</span>,
+          dataIndex: "batch",
+          filters: [{ text: "22", value: "22" }, { text: "32", value: "32" }],
+          onFilter: (value, record) => record.batch.indexOf(value) === 0
         },
         {
           title: (
-            <span style="font-size:15px;font-weight:600;">Description</span>
+            <span style="font-size:15px;font-weight:600;">Inject Vol.(μL)</span>
           ),
-          dataIndex: "description",
+          dataIndex: "inject"
+        },
+        {
+          title: <span style="font-size:15px;font-weight:600;">Type</span>,
+          dataIndex: "type",
+          filters: [
+            { text: "POSLAT", value: "POSLAT" },
+            { text: "GTOSLAT", value: "GTOSLAT" }
+          ],
+          onFilter: (value, record) => record.type.indexOf(value) === 0
+        },
+        {
+          title: (
+            <span style="font-size:15px;font-weight:600;">ClassLabel</span>
+          ),
+          dataIndex: "classLabel",
           customRender: text => {
-            return <span class="font_gray_color">{text}</span>;
+            return <span class="font_primary_color">{text}</span>;
           }
         },
         {
@@ -114,9 +121,23 @@ export default {
           scopedSlots: { customRender: "operation" }
         }
       ],
-
       loading: false,
-      visible: false
+      visible: false,
+      rowSelection: {
+        onChange: (selectedRowKeys, selectedRows) => {
+          console.log(
+            `selectedRowKeys: ${selectedRowKeys}`,
+            "selectedRows: ",
+            selectedRows
+          );
+        },
+        onSelect: (record, selected, selectedRows) => {
+          console.log(record, selected, selectedRows);
+        },
+        onSelectAll: (selected, selectedRows, changeRows) => {
+          console.log(selected, selectedRows, changeRows);
+        }
+      }
     };
   },
   methods: {
@@ -136,13 +157,15 @@ export default {
       const { count, dataSource } = this;
       const newData = {
         key: count,
-        projectName: `Edit Me ${count}`,
-        experiments: 312,
-        platform: `tangtao. ${count}`,
-        lastModifiedDate: "2019-11-26 22:27:33",
-        createDate: "2019-11-24 16:11:19",
-        description: "tangtao update at 2019-11-24 16:11:23"
+        expermentName: `王瑞敏  ${count}`,
+        mode: 312,
+        platforn: `牛逼 ,  ${count}`,
+        type: "HDU",
+        batch: "322",
+        inject: "22",
+        classLabel: "boss/游戏/学习/跳绳/1,2,3,4"
       };
+
       this.dataSource = [...dataSource, newData];
       this.count = count + 1;
     },
@@ -169,10 +192,11 @@ export default {
   <div>
     <a-row type="flex" class="nav2" justify="center" style>
       <a-col :xs="23" style="max-width:1500px;padding:10px 0px;text-align:left;font-size:22px;">
-        Projects
+        Experiments
+        <div style="display:inline;font-size:26px;font-weight:700;padding:0px 10px;"></div>Projects152424332
         <div
           v-pointer
-          style="display:inline;font-size:26px;font-weight:700;padding-left:20px;"
+          style="display:inline;font-size:26px;font-weight:700;padding:0px 20px;"
           @click="showModal"
         >+</div>
       </a-col>
@@ -181,9 +205,21 @@ export default {
     <div style="max-width:1500px;margin:auto;margin-top:30px;">
       <a-row type="flex" justify="center" style>
         <a-col :sm="23" class="my-table" style="background:#FFF;padding:10px;">
-          <a-table :bordered="false" :size="'middle'" :dataSource="dataSource" :columns="columns">
+          <div style="text-align:left;">
+            <a-button class="table-operation-btn" type="default">Clear Sorts</a-button>
+            <a-button class="table-operation-btn" type="default">Clear Filters</a-button>
+            <a-button class="table-operation-btn" type="default">Edit</a-button>
+            <a-button class="table-operation-btn" type="default">Save</a-button>
+          </div>
+          <a-table
+            :bordered="false"
+            :size="'middle'"
+            :rowSelection="rowSelection"
+            :dataSource="dataSource"
+            :columns="columns"
+          >
             <template slot="name" v-pointer slot-scope="text">
-              <router-link :to="'/project/detail/' + text">
+              <router-link :to="'/library/detail/' + text">
                 <span v-html="text"></span>
                 <!-- <edit-table-cell
                                     :text="text"
@@ -194,32 +230,41 @@ export default {
               </router-link>
             </template>
 
-            <template slot="batch" v-pointer slot-scope="text">
-              <router-link :to="'/batch/list/' + text">
-                <span class="font_green_color" v-html="text"></span>
-              </router-link>
-            </template>
-
-            <template slot="platform" slot-scope="text">
+            <template slot="platforn" slot-scope="text">
               <div v-html="text"></div>
             </template>
 
+            <template slot="experimentName" v-pointer slot-scope="text">
+              <router-link :to="'/library/detail/' + text">
+                <div
+                  v-html="text"
+                  style="max-width:350px;word-wrap:break-word;word-break:break-all;"
+                ></div>
+              </router-link>
+            </template>
+
             <template slot="operation" slot-scope="text, record">
+              <router-link to="/">
+                <a-button class="table-btns btn-hover-green">Detail</a-button>
+              </router-link>&nbsp;
+              <router-link to="/">
+                <a-button class="table-btns btn-hover-green">RI Calibration</a-button>
+              </router-link>&nbsp;
+              <router-link to="/">
+                <a-button class="table-btns btn-hover-green">Peak Manual Check</a-button>
+              </router-link>&nbsp;
               <a-popconfirm
                 v-if="dataSource.length"
                 title="Sure to delete?"
                 @confirm="() => onDelete(record.key)"
               >
-                <a class="font_red_color" href="javascript:;">Delete</a>
+                <a-button class="table-btns table-btns-danger btn-hover-red">Delete</a-button>
               </a-popconfirm>&nbsp;
-              <router-link to="/">Upload</router-link>&nbsp;
-              <router-link to="/project/analyse/237e3434734">Analyse</router-link>&nbsp;
-              <router-link to="/">QC</router-link>
             </template>
           </a-table>
           <a-button class="editable-add-btn" @click="handleAdd">Add</a-button>
 
-          <a-modal v-model="visible" title="Add New Batch" onOk="handleOk" width="500px">
+          <a-modal v-model="visible" title="Add New Experiment" onOk="handleOk" width="500px">
             <template slot="footer">
               <a-button key="back" @click="handleCancel">Cancel</a-button>
               <a-button key="submit" type="primary" :loading="loading" @click="handleOk">Add</a-button>
@@ -229,9 +274,9 @@ export default {
                 <div
                   style="font-size:16px;font-weight:600;float:left;text-align:right;padding-right:10px;
                                    width:165px;"
-                >Project Name&nbsp;:</div>
+                >Experiment Name&nbsp;:</div>
                 <div style="float:left;">
-                  <a-input style="max-width:200px;height:30px;" />
+                  <a-input value="测试代码" style="max-width:200px;height:30px;" />
                 </div>
               </div>
               <div style="line-height:30px;height:40px;padding:5px 0px;">
@@ -262,7 +307,7 @@ export default {
               <div style="line-height:30px;min-height:40px;padding:5px 0px;">
                 <div style="font-size:16px;font-weight:600;margin-bottom:5px;">Description:</div>
                 <div>
-                  <a-textarea placeholder="Basic usage" :rows="4" />
+                  <a-textarea placeholder="正在测试..." :rows="4" />
                 </div>
               </div>
             </div>
@@ -288,6 +333,34 @@ export default {
   }
 }
 
+.table-btns-danger {
+  color: @common_red_color;
+  border-color: @common_red_color;
+}
+
+.table-btns {
+  height: 30px !important;
+  line-height: 24px;
+  padding: 3px 5px;
+  margin: 2px 2px;
+}
+
+.btn-hover-green:hover {
+  color: @common_green_color;
+  border-color: @common_green_color;
+  cursor: pointer;
+}
+
+.btn-hover-red:hover {
+  color: #ffffff;
+  background: @common_red_color;
+  cursor: pointer;
+}
+// 表格操作按钮
+.table-operation-btn {
+  padding: 2px 5px;
+  margin: 5px 5px;
+}
 .editable-cell {
   position: relative;
 }

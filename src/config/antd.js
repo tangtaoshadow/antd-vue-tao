@@ -9,7 +9,7 @@
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive: ant-design 配置文件
  * @Statement: 这里启用了按需加载的机制 把需要配置的antd组件加载进入
- * @Last Modified time: 2019-11-27 16:23:13
+ * @Last Modified time: 2019-12-01 00:09:59
  */
 
 import Vue from "vue";
@@ -32,6 +32,7 @@ import {
     Tabs,
     Tag,
     Upload,
+    Popover,
     Popconfirm
 } from "ant-design-vue";
 // import "./antd.less";
@@ -100,6 +101,9 @@ Vue.component(Upload.Dragger.name, Upload.Dragger);
 Vue.component(Checkbox.name, Checkbox);
 // Tag
 Vue.component(Tag.name, Tag);
+
+// 弹窗
+Vue.component(Popover.name, Popover);
 
 // 输出antd的详细信息
 let antd = {
