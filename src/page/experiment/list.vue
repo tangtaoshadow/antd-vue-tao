@@ -10,7 +10,7 @@
  * @Statement: experimentList 数据列表
  * @Date: 2019-11-30 17:36:17
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-01 01:27:44
+ * @Last Modified time: 2019-12-01 15:28:23
  */
 export default {
   name: "experimentList",
@@ -19,7 +19,7 @@ export default {
       dataSource: [
         {
           key: "0",
-          expermentName: "expermentName 1",
+          expermentName: "expermentName LMS",
           mode: "Positive",
           platforn: "EAR QXA01",
           type: "POSLAT",
@@ -306,7 +306,7 @@ export default {
                   :columns="columns"
                 >
                   <template slot="name" v-pointer slot-scope="text">
-                    <router-link :to="'/library/detail/' + text">
+                    <router-link :to="'/experiment/detail/' + text">
                       <span v-html="text"></span>
                       <!-- <edit-table-cell
                                     :text="text"
@@ -322,7 +322,7 @@ export default {
                   </template>
 
                   <template slot="experimentName" v-pointer slot-scope="text">
-                    <router-link :to="'/library/detail/' + text">
+                    <router-link :to="'/experiment/detail/' + text">
                       <div
                         v-html="text"
                         style="max-width:350px;word-wrap:break-word;word-break:break-all;"

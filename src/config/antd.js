@@ -9,7 +9,7 @@
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive: ant-design 配置文件
  * @Statement: 这里启用了按需加载的机制 把需要配置的antd组件加载进入
- * @Last Modified time: 2019-12-01 01:04:13
+ * @Last Modified time: 2019-12-01 16:27:58
  */
 
 import Vue from "vue";
@@ -35,6 +35,7 @@ import {
     Popover,
     List,
     Dropdown,
+    Radio,
     Popconfirm
 } from "ant-design-vue";
 // import "./antd.less";
@@ -114,6 +115,10 @@ Vue.component(Popover.name, Popover);
 
 // 下拉框
 Vue.component(Dropdown.name, Dropdown);
+
+// 单选框
+Vue.component(Radio.name, Radio);
+Vue.component(Radio.Group.name, Radio.Group);
 
 // 输出antd的详细信息
 let antd = {

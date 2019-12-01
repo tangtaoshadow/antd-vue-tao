@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-23 15:11:30
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-30 17:58:51
+ * @Last Modified time: 2019-12-01 13:59:50
  */
 
 // import Layout from "../components/layout";
@@ -28,6 +28,7 @@ import BatchDetail from "../page/batch/detail";
 import BatchUpload from "../page/batch/upload";
 import BatchAnalyse from "../page/batch/analyse";
 import ExperimentList from "../page/experiment/list";
+import ExperimentDetail from "../page/experiment/detail";
 
 import { BasicLayout } from "../layouts";
 
@@ -148,6 +149,15 @@ const routes = [
                 meta: {
                     title: "Experiment List",
                     content: "tangtao : Experiment List at 2019-11-27 16:40:04"
+                }
+            },
+            {
+                path: "experiment/detail/*",
+                name: "ExperimentDetail",
+                component: ExperimentDetail,
+                meta: {
+                    title: "Experiment Detail",
+                    content: "tangtao : Experiment Detail at 2019-12-1 13:59:56"
                 }
             },
             {
