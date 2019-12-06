@@ -25,11 +25,12 @@ export default {
                     commit("setLang", lang);
                     return Promise.resolve(lang);
                 })
-                .catch(() => {
+                .catch(e => {
                     dispatch("loadLang", i18n.fallbackLocale).then(lang => {
                         console.warn(
                             `未找到对应语言包，已加载默认语言：${lang}`
                         );
+                        console.log(e);
                         return lang;
                     });
                 });
