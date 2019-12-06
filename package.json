@@ -1,0 +1,77 @@
+{
+    "name": "antd-vue-tao",
+    "version": "1.7.1",
+    "private": true,
+    "create_time": "2019-11-16 03:33:56",
+    "update_time": "2019-12-6 20:49:11",
+    "tangtao": "tangtao tangtao2099@outlook.com https://www.promiselee.cn/tao",
+    "description": "基于ant-design-vue开发",
+    "GitHub[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
+    "Repository[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
+    "scripts": {
+        "tao": "echo antd-vue-tao && vue-cli-service serve",
+        "build": "echo antd-vue-tao && vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
+    "keywords": [
+        "TangTao",
+        "https://www.promiselee.cn/tao",
+        "tangtao2099@outlook.com",
+        "https://www.promiselee.cn/tao",
+        "https://github.com/tangtaoshadow/antd-vue-tao"
+    ],
+    "author": "TangTao",
+    "my_home": "https://www.promiselee.cn/tao",
+    "my_email": "tangtao2099@outlook.com",
+    "Gitee[Author]": "https://gitee.com/tangtao2099/antd-vue-tao",
+    "Gitee[Propro]": "https://gitee.com/ProproStudio/Propro-Server-Front",
+    "license": "TangTao",
+    "dependencies": {
+        "@antv/g2": "3.5.11",
+        "ant-design-vue": "1.4.6",
+        "axios": "0.18.1",
+        "core-js": "^3.4.1",
+        "html-webpack-plugin": "3.2.0",
+        "less-loader": "^5.0.0",
+        "vue": "^2.6.10",
+        "vue-i18n": "^8.15.0",
+        "vue-router": "3.1.3",
+        "vuex": "3.1.2"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^4.0.0",
+        "@vue/cli-plugin-eslint": "^4.0.0",
+        "@vue/cli-service": "^4.0.0",
+        "babel-eslint": "^10.0.3",
+        "babel-plugin-import": "^1.12.2",
+        "eslint": "^5.16.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "less": "^3.10.3",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "rules": {
+            "no-console": "off"
+        },
+        "parserOptions": {
+            "parser": "babel-eslint"
+        }
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
+}
