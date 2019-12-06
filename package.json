@@ -1,9 +1,9 @@
 {
     "name": "antd-vue-tao",
-    "version": "1.6.3",
+    "version": "1.7.0",
     "private": true,
     "create_time": "2019-11-16 03:33:56",
-    "update_time": "2019-12-6 14:58:27",
+    "update_time": "2019-12-6 16:53:27",
     "tangtao": "tangtao tangtao2099@outlook.com https://www.promiselee.cn/tao",
     "description": "基于ant-design-vue开发",
     "GitHub[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
@@ -86,6 +86,7 @@
         "1.6.1 完善 project library batch 组件界面 at 2019-11-27 12:46:20",
         "1.6.2 完善 experiments list 组件界面 at 2019-12-1 01:28:54",
         "1.6.3 添加 antv/g2 at 2019-12-6 14:58:02",
-        "update time at 2019-12-6 14:58:06"
+        "1.7.0 antv/g2 整合完成 at 2019-12-6 16:54:01",
+        "update time at 2019-12-6 16:54:06"
     ]
 }

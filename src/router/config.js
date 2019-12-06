@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-23 15:11:30
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-01 13:59:50
+ * @Last Modified time: 2019-12-06 16:21:01
  */
 
 // import Layout from "../components/layout";
@@ -29,6 +29,7 @@ import BatchUpload from "../page/batch/upload";
 import BatchAnalyse from "../page/batch/analyse";
 import ExperimentList from "../page/experiment/list";
 import ExperimentDetail from "../page/experiment/detail";
+import ExperimentRiCalibration from "../page/experiment/ri_calibration";
 
 import { BasicLayout } from "../layouts";
 
@@ -158,6 +159,16 @@ const routes = [
                 meta: {
                     title: "Experiment Detail",
                     content: "tangtao : Experiment Detail at 2019-12-1 13:59:56"
+                }
+            },
+            {
+                path: "experiment/ricalibration/*",
+                name: "Experiment Ri Calibration",
+                component: ExperimentRiCalibration,
+                meta: {
+                    title: "Experiment Ri Calibration",
+                    content:
+                        "tangtao : Experiment Ri Calibration at 2019-12-6 16:20:57"
                 }
             },
             {

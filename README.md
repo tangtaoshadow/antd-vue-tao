@@ -20,32 +20,17 @@
 
 
 
+---
+
 # [访问网页](https://www.promiselee.cn/tao/antd-vue)
 
 
 
-## Project setup
-```
-yarn install
-```
+---
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+# <a target="blank" href="http://cdn.promiselee.cn/antd_vue/development_document.html">开发文档</a>
 
-### Compiles and minifies for production
-```bash
-yarn build
-```
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 
@@ -185,7 +170,101 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 
+---
 
+# 运行
+
+**作者：**[唐涛](https://www.promiselee.cn/tao)
+
+**创建**：`2019-12-6 16:41:34`
+
+**修改**：`2019-12-6 16:41:39`
+
+
+
+```bash
+C:\program1\dian\antd-vue-2\antd-demo>npm  run tao
+
+> antd-vue-tao@1.6.3 tao C:\program1\dian\antd-vue-2\antd-demo
+> echo antd-vue-tao && vue-cli-service serve
+
+antd-vue-tao
+ INFO  Starting development server...
+98% after emitting CopyPlugin
+
+ DONE  Compiled successfully in 15601ms                                                                      下午4:40:48
+
+
+  App running at:
+  - Local:   http://localhost:8008/
+  - Network: http://192.168.103.197:8008/
+
+  Note that the development build is not optimized.
+  To create a production build, run yarn build.
+```
+
+
+
+---
+
+# 编译打包
+
+**作者：**[唐涛](https://www.promiselee.cn/tao)
+
+**创建**：`2019-12-6 16:40:02`
+
+**修改**：`2019-12-6 16:40:07`
+
+```bash
+C:\program1\dian\antd-vue-2\antd-demo>yarn  build
+yarn run v1.19.1
+$ echo antd-vue-tao && vue-cli-service build
+antd-vue-tao
+
+-  Building for production...
+
+ WARNING  Compiled with 3 warnings                                                                           下午4:38:21
+ warning
+
+asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets:
+  img/5dc00d10e4b0c555374d5255.270c1fd6.png (1.22 MiB)
+  css/chunk-vendors.b4531557.css (348 KiB)
+  js/chunk-vendors.f5fcbd09.js (1.68 MiB)
+
+ warning
+
+entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  app (2.16 MiB)
+      css/chunk-vendors.b4531557.css
+      js/chunk-vendors.f5fcbd09.js
+      css/app.edcedb81.css
+      js/app.cb3d4dc7.js
+
+
+ warning
+
+webpack performance recommendations:
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+
+  File                                   Size              Gzipped
+
+  dist\js\chunk-vendors.f5fcbd09.js      1716.49 KiB       530.35 KiB
+  dist\js\app.cb3d4dc7.js                119.63 KiB        20.56 KiB
+  dist\css\chunk-vendors.b4531557.css    347.74 KiB        39.81 KiB
+  dist\css\app.edcedb81.css              32.56 KiB         3.77 KiB
+
+  Images and other types of assets omitted.
+
+ DONE  Build complete. The dist directory is ready to be deployed.
+ INFO  Check out deployment instructions at https://cli.vuejs.org/guide/deployment.html
+
+Done in 49.14s.
+
+```
 
 
 
