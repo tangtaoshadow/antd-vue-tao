@@ -10,7 +10,7 @@
  * @Statement: experimentList 数据列表
  * @Date: 2019-11-30 17:36:17
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-01 15:28:23
+ * @Last Modified time: 2019-12-03 22:59:21
  */
 export default {
   name: "experimentList",
@@ -286,7 +286,7 @@ export default {
                   <a-button class="table-operation-btn" type="primary">Analyze</a-button>
 
                   <a-dropdown>
-                    <a-menu slot="overlay" @click="handleMenuClick">
+                    <a-menu slot="overlay">
                       <a-menu-item key="1" class="list-btns">Edit</a-menu-item>
                       <a-menu-item key="2" class="list-btns">Move</a-menu-item>
 

@@ -1,9 +1,9 @@
 {
     "name": "antd-vue-tao",
-    "version": "1.5.0",
+    "version": "1.6.3",
     "private": true,
     "create_time": "2019-11-16 03:33:56",
-    "update_time": "2019-11-22 13:45:50",
+    "update_time": "2019-12-6 14:58:27",
     "tangtao": "tangtao tangtao2099@outlook.com https://www.promiselee.cn/tao",
     "description": "基于ant-design-vue开发",
     "GitHub[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
@@ -27,6 +27,7 @@
     "Gitee[Propro]": "https://gitee.com/ProproStudio/Propro-Server-Front",
     "license": "TangTao",
     "dependencies": {
+        "@antv/g2": "3.5.11",
         "ant-design-vue": "1.4.6",
         "core-js": "^3.4.1",
         "html-webpack-plugin": "3.2.0",
@@ -84,6 +85,7 @@
         "1.6.0 添加自定义 table  at 2019-11-24 15:11:19",
         "1.6.1 完善 project library batch 组件界面 at 2019-11-27 12:46:20",
         "1.6.2 完善 experiments list 组件界面 at 2019-12-1 01:28:54",
-        "update time at 2019-11-22 15:15:11"
+        "1.6.3 添加 antv/g2 at 2019-12-6 14:58:02",
+        "update time at 2019-12-6 14:58:06"
     ]
 }
