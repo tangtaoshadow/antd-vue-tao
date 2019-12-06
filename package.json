@@ -3,7 +3,7 @@
     "version": "1.7.0",
     "private": true,
     "create_time": "2019-11-16 03:33:56",
-    "update_time": "2019-12-6 16:53:27",
+    "update_time": "2019-12-6 18:05:12",
     "tangtao": "tangtao tangtao2099@outlook.com https://www.promiselee.cn/tao",
     "description": "基于ant-design-vue开发",
     "GitHub[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
@@ -72,21 +72,5 @@
     "browserslist": [
         "> 1%",
         "last 2 versions"
-    ],
-    "updateTao": [
-        "1.0.0 初始化项目 at 2019-11-16 11:22:58",
-        "1.1.0 添加必备组件 antd babel less at 2019-11-17 01:59:18",
-        "1.2.0 添加组件 i18n at 2019-11-17 17:48:30",
-        "1.3.0 添加组件 vuex at 2019-11-18 19:54:12",
-        "1.4.0 添加组件 vue-router 3.1.3 at 2019-11-20 09:37:10",
-        "1.5.0 升级组件 ant-design-vue 1.4.6 at 2019-11-22 15:15:01",
-        "1.5.1 实现底部样式  at 2019-11-22 17:46:32",
-        "1.5.2 实现打包配置 动态生成meta  at 2019-11-23 01:10:26",
-        "1.6.0 添加自定义 table  at 2019-11-24 15:11:19",
-        "1.6.1 完善 project library batch 组件界面 at 2019-11-27 12:46:20",
-        "1.6.2 完善 experiments list 组件界面 at 2019-12-1 01:28:54",
-        "1.6.3 添加 antv/g2 at 2019-12-6 14:58:02",
-        "1.7.0 antv/g2 整合完成 at 2019-12-6 16:54:01",
-        "update time at 2019-12-6 16:54:06"
     ]
 }

@@ -9,7 +9,7 @@
  * @Statement:
  * @Date: 2019-11-22 19:37:45
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-11-24 18:52:00
+ * @Last Modified time: 2019-12-06 17:58:01
  */
 
 // import "./src/layouts/Common.less";
@@ -56,7 +56,6 @@ const vueConfig = {
                 modifyVars: {
                     // 全局配置颜色修改
                     // less vars，customize ant design theme
-                    // 使用了阿里云主题色
                     "primary-color": "#FF6A00",
                     "table-header-color": "#333333",
                     "table-row-hover-bg": "#f5f5f6",

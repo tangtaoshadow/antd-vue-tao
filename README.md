@@ -10,7 +10,7 @@
 
 **CreateTime：**`2019-11-17 01:34:41`
 
-**UpdateTime：**`2019-11-22 21:11:35`
+**UpdateTime：**`2019-12-6 17:07:30`
 
 **Copyright:**  唐涛 [HOME | 首页](https://www.promiselee.cn/tao) 2019 ©  
 
@@ -28,7 +28,7 @@
 
 ---
 
-# <a target="blank" href="http://cdn.promiselee.cn/antd_vue/development_document.html">开发文档</a>
+# <a target="blank" href="http://cdn.promiselee.cn/antd_vue/tao/development_document.html">开发文档</a>
 
 
 
@@ -42,15 +42,15 @@
 
 **创建**：`2019-11-18 19:55:40`
 
-**修改**：`2019-11-18 19:59:15`
+**修改**：`2019-12-6 18:05:37`
 
 ```json
 {
     "name": "antd-vue-tao",
-    "version": "1.5.0",
+    "version": "1.7.0",
     "private": true,
     "create_time": "2019-11-16 03:33:56",
-    "update_time": "2019-11-22 13:45:50",
+    "update_time": "2019-12-6 18:05:12",
     "tangtao": "tangtao tangtao2099@outlook.com https://www.promiselee.cn/tao",
     "description": "基于ant-design-vue开发",
     "GitHub[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
@@ -74,8 +74,10 @@
     "Gitee[Propro]": "https://gitee.com/ProproStudio/Propro-Server-Front",
     "license": "TangTao",
     "dependencies": {
+        "@antv/g2": "3.5.11",
         "ant-design-vue": "1.4.6",
         "core-js": "^3.4.1",
+        "html-webpack-plugin": "3.2.0",
         "less-loader": "^5.0.0",
         "vue": "^2.6.10",
         "vue-i18n": "^8.15.0",
@@ -117,19 +119,8 @@
     "browserslist": [
         "> 1%",
         "last 2 versions"
-    ],
-    "updateTao": [
-        "1.0.0 初始化项目 at 2019-11-16 11:22:58",
-        "1.1.0 添加必备组件 antd babel less at 2019-11-17 01:59:18",
-        "1.2.0 添加组件 i18n at 2019-11-17 17:48:30",
-        "1.3.0 添加组件 vuex at 2019-11-18 19:54:12",
-        "1.4.0 添加组件 vue-router 3.1.3 at 2019-11-20 09:37:10",
-        "1.5.0 升级组件 ant-design-vue 1.4.6 at 2019-11-22 15:15:01",
-        "1.5.1 实现底部样式  at 2019-11-22 17:46:32",
-        "update time at 2019-11-22 15:15:11"
     ]
 }
-
 ```
 
 
@@ -270,15 +261,25 @@ Done in 49.14s.
 
 
 
+---
 
+# 版本
 
+**作者：**[唐涛](https://www.promiselee.cn/tao)
 
+**创建**：`2019-12-6 17:14:54`
 
+**修改**：`2019-12-6 17:16:52`
 
+## 1.7.0
 
+**createTime**：`2019-12-6 17:17:16`
 
+**updateTime**：`2019-12-6 17:17:35`
 
+#### [下载](http://cdn.promiselee.cn/antd_vue/tao/antd-vue-tao-1.7.0.zip)
 
+#### [GitHub](https://github.com/tangtaoshadow/antd-vue-tao/releases)
 
 
 
