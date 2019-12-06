@@ -9,7 +9,7 @@
  * @Statement:
  * @Date: 2019-11-22 19:37:45
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-06 17:58:01
+ * @Last Modified time: 2019-12-06 21:41:30
  */
 
 // import "./src/layouts/Common.less";
@@ -75,16 +75,20 @@ const vueConfig = {
     devServer: {
         // development server port 8000
         // 配置部署端口
-        port: 8008
+        port: 8008,
         // 代理转发配置
         // If you want to turn on the proxy, please remove the mockjs /src/main.jsL11
-        // proxy: {
-        //   '/api': {
-        //     target: 'https://mock.ihx.me/mock/5baf3052f7da7e07e04a5116/antd-pro',
-        //     ws: false,
-        //     changeOrigin: true
-        //   }
-        // }
+        proxy: {
+            "/MyServer": {
+                target: "http://192.168.102.36:8080/",
+                ws: false,
+                secure: false,
+                changeOrigin: true,
+                pathRewrite: {
+                    "^/MyServer": ""
+                }
+            }
+        }
     },
     // disable source map in production
     // productionSourceMap: false,

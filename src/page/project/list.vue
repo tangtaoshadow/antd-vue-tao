@@ -10,9 +10,10 @@
  * @Statement:
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-06 20:47:00
+ * @Last Modified time: 2019-12-06 22:51:24
  */
 
+import { mapActions, mapState } from "vuex";
 import Tao from "../../utils/common";
 Tao.consolelog("page : project list");
 export default {
@@ -139,12 +140,16 @@ export default {
                 name: null,
                 description: null
             },
+            taskName: null,
             name: null,
             loading: false,
             visible: false
         };
     },
     methods: {
+        ...mapActions({
+            executeCreateProject: "projectList/createProject"
+        }),
         onCellChange(key, dataIndex, value) {
             const dataSource = [...this.dataSource];
             const target = dataSource.find(item => item.key === key);
@@ -177,17 +182,8 @@ export default {
         addProject(e) {
             e;
             // this.$store.commit("setThemeColor", val)
-            console.log(this.name, this.newProject);
-            console
-                .log
-                // this.$store.commit("projectListCreate", this.newProject)
-                ();
-
-            this.$store.dispatch(
-                "projectList/projectListCreate",
-                this.newProject
-            );
-
+            this.taskName = "executeCreateProject";
+            this.executeCreateProject(this.newProject);
             this.loading = true;
             setTimeout(() => {
                 this.visible = false;
@@ -198,6 +194,24 @@ export default {
             e;
             this.visible = false;
         }
+    },
+    computed: {
+        ...mapState({
+            createProject: state => state.projectList.createProject
+        }),
+        updateCreateProject() {
+            console.log("updateCreateProject");
+            if (10000 < this.createProject.updateTime) {
+                // 调用方法 更新数据
+                console.log(this.createProject);
+            }
+            return 1;
+        }
+    },
+    beforeUpdate() {
+        console.log("beforeUpdate");
+        // if (this.executeCreateProject) {
+        // }
     }
 };
 </script>
@@ -227,6 +241,7 @@ export default {
                     class="my-table"
                     style="background:#FFF;padding:10px;"
                 >
+                    1111={{ updateCreateProject }}
                     <a-table
                         :bordered="false"
                         :size="'middle'"
