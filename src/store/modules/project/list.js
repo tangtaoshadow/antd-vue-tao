@@ -10,7 +10,7 @@
  * @Statement:  项目列表的数据存储 只负责数据转存 修改
  * @Date: 2019-12-06 19:15:05
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-06 22:27:52
+ * @Last Modified time: 2019-12-07 17:31:06
  */
 
 import axios from "axios";
@@ -27,11 +27,11 @@ tao.state = {
         data: null,
         updateTime: -1
     },
-    getProject: {
+    projectList: {
         status: -1,
         data: null,
         updateTime: -1
-    },
+    }
 };
 
 tao.namespaced = true;
@@ -47,8 +47,9 @@ tao.mutations = {
      * @UpdateTime          2019-12-6 20:15:04
      * @Archive             项目列表 触发器
      */
-    projectListGet: () => {
-        console.log("test 111111");
+
+    setProjectList: (state, data) => {
+        state.projectList = data;
     },
     setCreateProject(state, data) {
         console.log(state.createProject, data);
@@ -57,30 +58,41 @@ tao.mutations = {
 };
 
 tao.actions = {
-    async getProject({ state, commit }, payload) {
-        //   state.status1 = payload
-        console.log(state, payload, payload.name);
-
-        let { name: projectName, description = null } = payload;
+    /**
+     *
+     * @functionName : projectList
+     * @author : Tangtao
+     * @createTime : 2019-12-7 17:05:13
+     * @updateTime : 2019-12-7 17:05:37
+     * @param {*} { state, commit }
+     * @param {*} payload 这个参数默认保留 不需要传入
+     * @archive 获取实验列表
+     * @returns 异步请求
+     */
+    async getProjectList({ state, commit }, payload) {
+        console.log(state, commit, payload);
+        let currentPage = 1;
+        let pageSize = 500;
         let obj = {
             status: -1
         };
         obj.updateTime = Date.now();
         await axios
-            .get("/MyServer/project/add", {
+            .post("/MyServer/project/list", {
                 // 还可以直接把参数拼接在url后边
                 params: {
-                    projectName,
-                    description
+                    currentPage,
+                    pageSize
                 }
             })
             .then(function(res) {
+                // 标记数据可以正常使用 0
                 obj.status = 0;
                 obj.data = res.data;
             })
             .catch(function(error) {
                 obj.status = -1;
-                console.log("Tangtao", error);
+                console.log("Tangtao：网络错误", error);
             });
         if (0 == obj.status) {
             // 数据成功返回 不考虑其他情况
@@ -89,7 +101,7 @@ tao.actions = {
             obj.data = null;
         }
         console.log(obj);
-        commit("setCreateProject", obj);
+        commit("setProjectList", obj);
         return true;
     },
     async createProject({ state, commit }, payload) {

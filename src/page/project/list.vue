@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-07 16:54:56
+ * @Last Modified time: 2019-12-07 17:33:07
  */
 
 import { mapActions, mapState } from "vuex";
@@ -49,6 +49,7 @@ export default {
           description: "tangtao update at 2019-11-24 14:11:23"
         }
       ],
+      projectListTable: [],
       count: 4,
       columns: [
         {
@@ -130,7 +131,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      executeCreateProject: "projectList/createProject"
+      executeCreateProject: "projectList/createProject",
+      executeGetProjectList: "projectList/getProjectList"
     }),
     onCellChange(key, dataIndex, value) {
       const dataSource = [...this.dataSource];
@@ -139,6 +141,9 @@ export default {
         target[dataIndex] = value;
         this.dataSource = dataSource;
       }
+    },
+    test() {
+      console.log("test");
     },
     onDelete(key) {
       const dataSource = [...this.dataSource];
@@ -172,6 +177,11 @@ export default {
         this.loading = false;
       }, 3000);
     },
+    getProjectList() {
+      // this.$store.commit("setThemeColor", val)
+      this.taskName = "executeGetProjectList";
+      this.executeGetProjectList();
+    },
     handleCancel(e) {
       e;
       this.visible = false;
@@ -180,7 +190,7 @@ export default {
   computed: {
     ...mapState({
       createProject: state => state.projectList.createProject,
-      getProject: state => state.projectList.getProject
+      projectList: state => state.projectList.projectList
     }),
     updateCreateProject() {
       console.log("updateCreateProject");
@@ -191,9 +201,12 @@ export default {
       return 1;
     }
   },
-  beforeCreate() {},
-  beforeUpdate() {
-    console.log("beforeUpdate");
+  beforeCreate() {
+    console.log("before Craete");
+  },
+  beforeMount() {
+    this.getProjectList();
+    console.log("beforeMount");
     // if (this.executeCreateProject) {
     // }
   }
@@ -216,7 +229,7 @@ export default {
     <div style="max-width:1500px;margin:auto;margin-top:30px;">
       <a-row type="flex" justify="center" style>
         <a-col :sm="23" class="my-table" style="background:#FFF;padding:10px;">
-          1111={{ updateCreateProject }}
+          1111={{ projectList }}
           <a-table :bordered="false" :size="'middle'" :dataSource="dataSource" :columns="columns">
             <template slot="name" v-pointer slot-scope="text">
               <router-link :to="'/project/detail/' + text">
