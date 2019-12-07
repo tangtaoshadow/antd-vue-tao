@@ -10,7 +10,7 @@
  * @Statement: experimentList 数据列表
  * @Date: 2019-11-30 17:36:17
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-03 22:59:21
+ * @Last Modified time: 2019-12-07 16:53:10
  */
 export default {
   name: "experimentList",

@@ -26,7 +26,12 @@ tao.state = {
         status: -1,
         data: null,
         updateTime: -1
-    }
+    },
+    getProject: {
+        status: -1,
+        data: null,
+        updateTime: -1
+    },
 };
 
 tao.namespaced = true;
@@ -52,6 +57,41 @@ tao.mutations = {
 };
 
 tao.actions = {
+    async getProject({ state, commit }, payload) {
+        //   state.status1 = payload
+        console.log(state, payload, payload.name);
+
+        let { name: projectName, description = null } = payload;
+        let obj = {
+            status: -1
+        };
+        obj.updateTime = Date.now();
+        await axios
+            .get("/MyServer/project/add", {
+                // 还可以直接把参数拼接在url后边
+                params: {
+                    projectName,
+                    description
+                }
+            })
+            .then(function(res) {
+                obj.status = 0;
+                obj.data = res.data;
+            })
+            .catch(function(error) {
+                obj.status = -1;
+                console.log("Tangtao", error);
+            });
+        if (0 == obj.status) {
+            // 数据成功返回 不考虑其他情况
+        } else {
+            obj.status = -1;
+            obj.data = null;
+        }
+        console.log(obj);
+        commit("setCreateProject", obj);
+        return true;
+    },
     async createProject({ state, commit }, payload) {
         //   state.status1 = payload
         console.log(state, payload, payload.name);

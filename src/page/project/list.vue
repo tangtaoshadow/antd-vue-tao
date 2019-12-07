@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-06 23:09:43
+ * @Last Modified time: 2019-12-07 16:54:56
  */
 
 import { mapActions, mapState } from "vuex";
@@ -179,7 +179,8 @@ export default {
   },
   computed: {
     ...mapState({
-      createProject: state => state.projectList.createProject
+      createProject: state => state.projectList.createProject,
+      getProject: state => state.projectList.getProject
     }),
     updateCreateProject() {
       console.log("updateCreateProject");
@@ -190,6 +191,7 @@ export default {
       return 1;
     }
   },
+  beforeCreate() {},
   beforeUpdate() {
     console.log("beforeUpdate");
     // if (this.executeCreateProject) {
