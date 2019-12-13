@@ -11,7 +11,7 @@
  * @Statement:
  * @Date: 2019-12-06 16:14:03
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-11 00:58:44
+ * @Last Modified time: 2019-12-06 16:50:35
  */
 
 import G2 from "@antv/g2";
@@ -49,16 +49,22 @@ export default {
       // this.chart && this.chart.destory()
       this.chart = new G2.Chart({
         container: this.id,
-        width: 900,
-        height: 400
+        forceFit: true,
+        height: 500
       });
       this.chart.source(this.charData);
       this.chart.scale("value", {
         min: 0
       });
-      this.chart.scale("year", {
-        range: [0, 1]
+      this.chart.scale({
+        year: {
+          // range: [0, 1],
+          min: 120,
+          max: 180,
+          ticks: [123, 125, 127, 133, 140, 160, 162, 170]
+        }
       });
+
       this.chart.tooltip({
         crosshairs: {
           type: "line"
@@ -74,6 +80,7 @@ export default {
           stroke: "#fff",
           lineWidth: 1
         });
+
       this.chart.render();
     }
   }

@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-23 15:11:30
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-06 16:21:01
+ * @Last Modified time: 2019-12-13 14:34:28
  */
 
 // import Layout from "../components/layout";
@@ -30,6 +30,10 @@ import BatchAnalyse from "../page/batch/analyse";
 import ExperimentList from "../page/experiment/list";
 import ExperimentDetail from "../page/experiment/detail";
 import ExperimentRiCalibration from "../page/experiment/ri_calibration";
+// 导入 Antv
+import AntvList1 from "../page/charts/list1";
+import AntvList2 from "../page/charts/list2";
+import AntvList3 from "../page/charts/list3";
 
 import { BasicLayout } from "../layouts";
 
@@ -64,7 +68,7 @@ const routes = [
             },
             {
                 path: "project",
-                name: "project",
+                name: "projectList",
                 component: Project,
                 meta: {
                     title: "项目",
@@ -73,7 +77,7 @@ const routes = [
             },
             {
                 path: "project/detail/*",
-                name: "project",
+                name: "projectDetail",
                 component: ProjectDetail,
                 meta: {
                     title: "项目详情",
@@ -82,7 +86,7 @@ const routes = [
             },
             {
                 path: "project/analyse/*",
-                name: "project",
+                name: "projectAnalyse",
                 component: ProjectAnalyse,
                 meta: {
                     title: "项目分析",
@@ -91,7 +95,7 @@ const routes = [
             },
             {
                 path: "library",
-                name: "library",
+                name: "libraryList",
                 component: Library,
                 meta: {
                     title: "库列表",
@@ -109,7 +113,7 @@ const routes = [
             },
             {
                 path: "batch/list/*",
-                name: "batch list",
+                name: "batchList",
                 component: BatchList,
                 meta: {
                     title: "batch 列表",
@@ -118,7 +122,7 @@ const routes = [
             },
             {
                 path: "batch/detail/*",
-                name: "batch Detail",
+                name: "batchDetail",
                 component: BatchDetail,
                 meta: {
                     title: "库详情",
@@ -169,6 +173,36 @@ const routes = [
                     title: "Experiment Ri Calibration",
                     content:
                         "tangtao : Experiment Ri Calibration at 2019-12-6 16:20:57"
+                }
+            },
+            {
+                path: "antv/list1",
+                name: "AntvList1",
+                component: AntvList1,
+                meta: {
+                    title: "Antv List 1",
+                    content:
+                        "tangtao : Antv List 1 at 2019-12-11 00:46:25"
+                }
+            },
+            {
+                path: "antv/list2",
+                name: "AntvList2",
+                component: AntvList2,
+                meta: {
+                    title: "Antv List 2",
+                    content:
+                        "tangtao : Antv List 2 at 2019-12-11 11:04:56"
+                }
+            },
+            {
+                path: "antv/list3",
+                name: "AntvList3",
+                component: AntvList3,
+                meta: {
+                    title: "Antv List 3",
+                    content:
+                        "tangtao : Antv List 3 at 2019-12-13 14:34:22"
                 }
             },
             {

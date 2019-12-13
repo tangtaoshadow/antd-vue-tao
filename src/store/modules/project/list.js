@@ -10,7 +10,7 @@
  * @Statement:  项目列表的数据存储 只负责数据转存 修改
  * @Date: 2019-12-06 19:15:05
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-07 23:21:52
+ * @Last Modified time: 2019-12-08 00:23:19
  */
 
 import axios from "axios";
@@ -111,9 +111,9 @@ tao.actions = {
         commit("setProjectList", obj);
         return true;
     },
-    async createProject({ state, commit }, payload) {
+    async createProject({ commit }, payload) {
         //   state.status1 = payload
-        TAO.consolelog(state, payload, payload.name);
+        // TAO.consolelog(state, payload, payload.name);
 
         let { name: projectName, description = null } = payload;
         let obj = {
@@ -145,9 +145,9 @@ tao.actions = {
         commit("setCreateProject", obj);
         return true;
     },
-    async deleteProject({ state, commit }, payload) {
+    async deleteProject({ commit }, payload) {
         //   state.status1 = payload
-        TAO.consolelog(state, payload);
+        // TAO.consolelog(state, payload);
         let { id: projectId = "" } = payload;
         let obj = {
             status: -1

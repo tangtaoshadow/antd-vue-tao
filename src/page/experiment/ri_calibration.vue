@@ -17,7 +17,8 @@ import { Modal } from "ant-design-vue";
 let Antd = { Modal };
 // 导入图表
 import tao from "../../utils/common";
-import G2Line from "../../components/G2/Line";
+import G2Line from "../../components/G2/MyLine";
+import G2MyColumn from "../../components/G2/MyColumn";
 tao.consolelog("page: ExperimentRICalibration");
 
 export default {
@@ -26,46 +27,47 @@ export default {
     return {
       serverData: [
         {
-          year: "2010",
+          year: 123,
           value: 3
         },
         {
-          year: "2011",
+          year: 125,
           value: 4
         },
         {
-          year: "2012",
+          year: 127,
           value: 3.5
         },
         {
-          year: "2013",
+          year: 133,
           value: 5
         },
         {
-          year: "2014",
+          year: 140,
           value: 4.9
         },
         {
-          year: "2015",
+          year: 160,
           value: 6
         },
         {
-          year: "2016",
+          year: 162,
           value: 7
         },
         {
-          year: "2017",
+          year: 170,
           value: 9
         },
         {
-          year: "2018",
+          year: 177,
           value: 13
         }
       ]
     };
   },
   components: {
-    G2Line
+    G2Line,
+    G2MyColumn
   },
 
   methods: {
@@ -152,6 +154,9 @@ export default {
 
           <a-col :xs="24">
             <g2-line :charData="serverData" :id="'c1'"></g2-line>
+          </a-col>
+          <a-col :xs="24">
+            <g2-my-column :charData="serverData" :id="'c2'"></g2-my-column>
           </a-col>
         </a-col>
       </a-row>

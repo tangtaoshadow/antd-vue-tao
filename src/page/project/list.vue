@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-07 23:52:00
+ * @Last Modified time: 2019-12-08 00:22:21
  */
 
 import { mapActions, mapState } from "vuex";
@@ -22,35 +22,6 @@ export default {
   name: "projectList",
   data() {
     return {
-      dataSource: [
-        {
-          key: "0",
-          projectName: "projectName 1",
-          experiments: "32",
-          platform: "QXA01DN",
-          lastModifiedDate: "2019-11-26 22:26:19",
-          createDate: "2019-11-24 04:33:26",
-          description: "(((((((((((っ•ω•)っ Σ(σ｀•ω•´)σ 起飞！"
-        },
-        {
-          key: "1",
-          projectName: "projectName 2",
-          experiments: "444",
-          platform: "GSGGSW2",
-          lastModifiedDate: "2019-11-26 22:26:24",
-          createDate: "2019-11-24 11:12:00",
-          description: "tangtao update at 2019-11-24 04:34:55"
-        },
-        {
-          key: "2",
-          projectName: "projectName 3",
-          experiments: "122",
-          platform: "DWHEDG33",
-          lastModifiedDate: "2019-11-26 22:26:28",
-          createDate: "2019-11-24 15:44:20",
-          description: "tangtao update at 2019-11-24 14:11:23"
-        }
-      ],
       projectListTable: [],
       projectListTableColumns: [
         // id: "5dea36fd6382be5b4b3111ac"
@@ -111,7 +82,11 @@ export default {
           ),
           dataIndex: "description",
           customRender: text => {
-            return <span class="font_gray_color">{text}</span>;
+            return (
+              <div style="max-width:200px;" class="font_gray_color">
+                {text}
+              </div>
+            );
           }
         },
         {
@@ -136,17 +111,9 @@ export default {
       executeGetProjectList: "projectList/getProjectList",
       executeDeleteProject: "projectList/deleteProject"
     }),
-    onCellChange(key, dataIndex, value) {
-      const dataSource = [...this.dataSource];
-      const target = dataSource.find(item => item.key === key);
-      if (target) {
-        target[dataIndex] = value;
-        this.dataSource = dataSource;
-      }
-    },
-    async deleteProject(obj) {
-      TAO.consolelog(obj);
-      Antd.Message.loading("Delete Project ...", 3);
+
+    async deleteProjectConfirm(obj) {
+      Antd.Message.loading("Delete Project ...", 1.5);
       await this.executeDeleteProject(obj);
       this.handleDeleteproject();
       return 0;
@@ -160,27 +127,55 @@ export default {
           // 删除成功
           Antd.Notification.success({
             message: "System Hint",
-            description: "Delete success"
+            description: "Delete success",
+            duration: 1
           });
         }
-
+        // 强制刷新
+        this.getProjectList();
         return -1;
       }
     },
 
-    showModal() {
+    showModalCreateProject() {
       this.visible = true;
     },
-    addProject(e) {
+    async addProject(e) {
       e;
       // this.$store.commit("setThemeColor", val)
       this.taskName = "executeCreateProject";
-      this.executeCreateProject(this.newProject);
-      this.loading = true;
-      setTimeout(() => {
-        this.visible = false;
-        this.loading = false;
-      }, 3000);
+      await this.executeCreateProject(this.newProject);
+      // 隐藏
+      this.visible = false;
+      this.loading = false;
+      this.handleAddProject();
+    },
+    handleAddProject() {
+      let { status = -1, data = {} } = this.createProject;
+
+      if (0 == status) {
+        if (true == data.success) {
+          Antd.Notification.success({
+            message: "System Hint",
+            description: "Add project success",
+            duration: 1
+          });
+          // 清空输入的数据
+          this.newProject = {
+            name: null,
+            description: null
+          };
+          this.getProjectList();
+          return 0;
+        }
+      } else {
+        // 添加失败
+      }
+      Antd.Notification.error({
+        message: "System Hint",
+        description: "Add project failed",
+        duration: 1
+      });
     },
     async getProjectList() {
       // this.$store.commit("setThemeColor", val)
@@ -190,7 +185,6 @@ export default {
       this.handleGetProjectList();
     },
     handleGetProjectList() {
-      console.log("handleGetProjectList", this.projectList);
       let { data = {}, status = -1 } = this.projectList;
       let { data: arr = [] } = data;
       let formatArr = [];
@@ -268,7 +262,7 @@ export default {
         <div
           v-pointer
           style="display:inline;font-size:26px;font-weight:700;padding-left:20px;"
-          @click="showModal"
+          @click="showModalCreateProject"
         >+</div>
       </a-col>
     </a-row>
@@ -306,9 +300,9 @@ export default {
 
             <template slot="operation" slot-scope="text, record">
               <a-popconfirm
-                v-if="dataSource.length"
+                v-if="projectListTable.length"
                 title="Sure to delete?"
-                @confirm="() => deleteProject(record)"
+                @confirm="() => deleteProjectConfirm(record)"
               >
                 <span v-pointer class="font_red_color" href="javascript:;">Delete</span>
               </a-popconfirm>&nbsp;
