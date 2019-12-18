@@ -1,9 +1,9 @@
 {
     "name": "antd-vue-tao",
-    "version": "1.7.1",
+    "version": "2.1.0",
     "private": true,
     "create_time": "2019-11-16 03:33:56",
-    "update_time": "2019-12-11 01:10:21",
+    "update_time": "2019-12-18 16:12:47",
     "tangtao": "tangtao tangtao2099@outlook.com https://www.promiselee.cn/tao",
     "description": "基于ant-design-vue开发",
     "GitHub[Author]": "https://github.com/tangtaoshadow/antd-vue-tao",
@@ -29,6 +29,7 @@
     "dependencies": {
         "@antv/data-set": "0.10.2",
         "@antv/g2": "3.5.11",
+        "@antv/g2plot": "^0.11.8",
         "ant-design-vue": "1.4.6",
         "axios": "0.18.1",
         "core-js": "^3.4.8",

@@ -10,7 +10,7 @@
  * @Statement: ANTV
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-15 18:52:52
+ * @Last Modified time: 2019-12-18 17:33:18
  */
 import G2 from "@antv/g2";
 import DataSet from "@antv/data-set";
@@ -82,7 +82,6 @@ export default {
           mask: "M/DD H:mm"
         }
       });
-      console.log("1111111111");
       chart.facet("mirror", {
         fields: ["type"],
         showTitle: false, // 显示标题
