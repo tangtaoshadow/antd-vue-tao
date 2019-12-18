@@ -7,10 +7,10 @@
  * @Gitee: https://gitee.com/tangtao_2099
  * @知乎: https://www.zhihu.com/people/tang-tao-24-36/activities
  * @Archive:
- * @Statement: ANTV
+ * @Statement: Antv g2 Area 图绘制
  * @Date: 2019-11-22 20:00:34
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-13 23:01:57
+ * @Last Modified time: 2019-12-15 18:44:01
  */
 import G2 from "@antv/g2";
 import DataSet from "@antv/data-set";
@@ -50,10 +50,10 @@ export default {
         rangeMin > intensityList[i] && (rangeMin = intensityList[i]);
         rangeMax < intensityList[i] && (rangeMax = intensityList[i]);
         obj.range = null;
+        // 同时记录住开始和结束
         rtStart == rtList[i] &&
           ((rtStartY = intensityList[i]), (rtStartIndex = i));
         rtEnd == rtList[i] && ((rtEndY = intensityList[i]), (rtEndIndex = i));
-        // 同时记录住开始和结束
         arr.push(obj);
       }
       console.log("得出起始点(", rtStart, ",", rtStartY, ")");

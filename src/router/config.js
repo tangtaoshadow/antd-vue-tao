@@ -10,7 +10,7 @@
  * @Statement:
  * @Date: 2019-11-23 15:11:30
  * @Last Modified by: TangTao © 2019 www.promiselee.cn/tao
- * @Last Modified time: 2019-12-13 14:34:28
+ * @Last Modified time: 2019-12-15 01:13:00
  */
 
 // import Layout from "../components/layout";
@@ -34,6 +34,8 @@ import ExperimentRiCalibration from "../page/experiment/ri_calibration";
 import AntvList1 from "../page/charts/list1";
 import AntvList2 from "../page/charts/list2";
 import AntvList3 from "../page/charts/list3";
+import AntvList4 from "../page/charts/list4";
+import AntvList5 from "../page/charts/list5";
 
 import { BasicLayout } from "../layouts";
 
@@ -203,6 +205,26 @@ const routes = [
                     title: "Antv List 3",
                     content:
                         "tangtao : Antv List 3 at 2019-12-13 14:34:22"
+                }
+            },
+            {
+                path: "antv/list4",
+                name: "AntvList4",
+                component: AntvList4,
+                meta: {
+                    title: "Antv List 4",
+                    content:
+                        "tangtao : Antv List 4 at 2019-12-14 01:38:28"
+                }
+            },
+            {
+                path: "antv/list5",
+                name: "AntvList5",
+                component: AntvList5,
+                meta: {
+                    title: "Antv List 5",
+                    content:
+                        "tangtao : Antv List 5 at 2019-12-15 01:12:58"
                 }
             },
             {
